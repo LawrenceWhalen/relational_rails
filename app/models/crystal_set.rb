@@ -1,3 +1,2 @@
 class CrystalSet < ApplicationRecord
-
 end
