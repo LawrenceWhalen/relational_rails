@@ -1,0 +1,14 @@
+<form action="/tarot_deck" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Describe the Deck:</p>
+  <label for="Deck-name">Name:</label><br>
+  <input type='text' name='tarot_deck[deck_name]'><br><br>
+  <label for="Deck-price">Price:</label><br>
+  <input type="number" name="tarot_deck[price]" value="0.00"><br><br>
+  <input type="checkbox" name="tarot_deck[pre_owned]">
+  <label for="Pre-owned"> This deck is pre-owned.</label><br><br>
+  <label for="Deck-price">Major divinations preformed with this deck:</label><br>
+  <textarea name='tarot_deck[major_divinations]'></textarea><br>
+  <input type='submit'>
+  <input type="reset">
+</form>
