@@ -2,6 +2,10 @@
 
 class CrystalSetsController < ApplicationController
   def index
-    @crystal_set = CrystalSet.all
+    @crystal_sets = CrystalSet.all
+  end
+
+  def show
+    @crystal_set = CrystalSet.find(params[:id])
   end
 end
