@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2021_05_12_032553) do
 
-ActiveRecord::Schema.define(version: 2021_05_11_011635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,5 +28,11 @@ ActiveRecord::Schema.define(version: 2021_05_11_011635) do
     t.float "price"
     t.boolean "charged"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "crystal_set_id"
+    t.index ["crystal_set_id"], name: "index_crystals_on_crystal_set_id"
   end
+
+  add_foreign_key "crystals", "crystal_sets"
 end
