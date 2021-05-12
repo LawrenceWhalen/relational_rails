@@ -5,7 +5,6 @@ class CreateCrystals < ActiveRecord::Migration[5.2]
       t.float :price
       t.boolean :charged
       t.string :description
-
       t.timestamps
     end
   end
