@@ -1,18 +1,11 @@
-
-
-<!-- <script type="text/javascript">
-    $(new.html.erb).ready(function() {
-  return $("#pre_owned").click(function() {
-    return $("#major_readings").prop("disabled", !this.checked);
-  });
-  });
-</script> -->
-
-<%= form_with do |form| %>
-  <%= form.label :printing_date, 'Printing Date:' %><br><br>
-  <%= form.number_field :printing_date, in: 1.0..20.0, step: 0.01 %><br><br>
+<%= form_with url: '/tarot', method: :post do |form| %>
+  <%= form.label :name, 'Deck Name:' %>
+  <%= form.text_field :name %><br><br>
+  <%= form.label :number_made, 'Number Made:' %>
+  <%= form.number_field :number_made, in: 1..1000, step: 1 %><br><br>
   <%= form.label :pre_owned, 'Pre-Owned?' %>
   <%= form.check_box :pre_owned, {}, 'true', 'false' %><br><br>
-  <%= form.label :major_readings, 'Major Reading preformed:' %><br><br>+
-  <%= form.text_area :major_readings, size: "70x5" %>
+  <%= form.label :major_readings, 'Major Readings preformed:' %><br><br>+
+  <%= form.text_area :major_readings, size: "40x3" %><br><br><br><br>
+  <%= form.submit "Add Deck" %>
 <% end %>
