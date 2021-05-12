@@ -1,13 +1,18 @@
-<form action="/tarot" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>Describe the Deck:</p>
-  <label for="Deck-name">Name:</label><br>
-  <input type='text' name='tarot_deck[deck_name]'><br><br>
-  <label for="Deck-price">Price:</label><br>
-  <input type="number" name="tarot_deck[price]" value="0.00"><br><br>
-  <%= form.check_box :pre_owned %> This deck is pre-owned.<br><br>
-  <label for="Deck-price">Major divinations preformed with this deck:</label><br>
-  <textarea name='tarot_deck[major_divinations]'></textarea><br>
-  <input type='submit'>
-  <input type="reset">
-</form>
+
+
+<!-- <script type="text/javascript">
+    $(new.html.erb).ready(function() {
+  return $("#pre_owned").click(function() {
+    return $("#major_readings").prop("disabled", !this.checked);
+  });
+  });
+</script> -->
+
+<%= form_with do |form| %>
+  <%= form.label :printing_date, 'Printing Date:' %><br><br>
+  <%= form.number_field :printing_date, in: 1.0..20.0, step: 0.01 %><br><br>
+  <%= form.label :pre_owned, 'Pre-Owned?' %>
+  <%= form.check_box :pre_owned, {}, 'true', 'false' %><br><br>
+  <%= form.label :major_readings, 'Major Reading preformed:' %><br><br>+
+  <%= form.text_area :major_readings, size: "70x5" %>
+<% end %>
