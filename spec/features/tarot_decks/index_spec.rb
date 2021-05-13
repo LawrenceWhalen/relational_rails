@@ -6,7 +6,6 @@ RSpec.describe 'the songs show page' do
       name: 'Programs',
       number_made: 15,
       pre_owned: false,
-      major_readings: 'First schoolday, First love'
       )
 
     visit "/tarot_decks"

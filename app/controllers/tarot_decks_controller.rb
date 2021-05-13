@@ -12,7 +12,6 @@ class TarotDecksController < ApplicationController
       name: params[:name],
       number_made: params[:number_made],
       pre_owned: params[:pre_owned],
-      major_readings: params[:major_readings]
       })
     deck.save
 
