@@ -1,7 +1,9 @@
 <h1> Crystal Sets </h1>
 <% @crystal_sets.each do |set| %>
-  <h2><%= set.collection_name %> Collection</h2>
-  <p>Created At: <%= set.created_at.strftime('%m/%d/%y') %></p>
-  <p>Limited Edition: <%= set.limited_edition %></p>
-  <p>Inventory: <%= set.inventory %></p>
+  <div>
+    <h2><%= set.collection_name %> Collection</h2>
+    <p>Created At: <%= set.created_at.strftime('%m/%d/%y') %></p>
+    <p>Limited Edition: <%= set.limited_edition %></p>
+    <p>Inventory: <%= set.inventory %></p>
+  </div>
 <% end %>
