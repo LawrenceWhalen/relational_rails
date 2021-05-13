@@ -20,4 +20,10 @@ RSpec.describe 'crystal set index' do
     expect(page).to have_content(set.limited_edition)
     expect(page).to have_content(set.created_at.strftime('%m/%d/%y'))
   end
+
+  it 'shows crystal sets in order of date created' do
+    visit '/crystal_sets'
+
+    expect("Intuitively Chosen Raw Crystals Collection").to appear_before("Raw Crystal Chunks - 28pc Collection", only_text: true)
+  end
 end
