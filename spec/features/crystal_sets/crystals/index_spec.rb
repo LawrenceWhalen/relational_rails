@@ -1,9 +1,5 @@
 #spec/features/crystal_sets/crystals/index_spec
 
-# As a visitor
-# When I visit '/crystal_set/:set_id/crystals'
-# Then I see each Child that is associated with that Parent with each Child's attributes:
-
 require 'rails_helper'
 
 RSpec.describe 'Crystal set crystals index' do
@@ -12,7 +8,7 @@ RSpec.describe 'Crystal set crystals index' do
     @larimar = @set.crystals.create!(name: "Larimar", price: 4.55, charged: true, description: "Peace/Relaxation/Communication")
     @emerald = @set.crystals.create!(name: "Emerald", price: 100.99, charged: true, description: "Love/Compassion/Abundance")
   end
-  
+
   it 'shows all crystal_set name' do
     visit "/crystal_sets/#{@set.id}/crystals"
     
