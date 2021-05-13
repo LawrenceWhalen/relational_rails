@@ -10,6 +10,7 @@ RSpec.describe 'the crystal set show page' do
     @set_1 = CrystalSet.create!(collection_name: "Raw Crystal Chunks - 28pc", limited_edition: true, inventory: 3)
     @set_2 = CrystalSet.create!(collection_name: "Moonlight ", limited_edition: false, inventory: 10)
   end 
+
   it 'displays crystal set and its attributes' do
     visit "/crystal_sets/#{@set_1.id}"
     save_and_open_page    
@@ -22,7 +23,7 @@ RSpec.describe 'the crystal set show page' do
 
   it 'displays number of crystals in crystal set' do
     visit "/crystal_sets/#{@set_1.id}"
-
+    save_and_open_page
     expect(page).to have_content(@set_1.crystal_count)
   end
 end
