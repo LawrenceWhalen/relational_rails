@@ -7,6 +7,10 @@ class TarotDecksController < ApplicationController
 
   end
 
+  def deck
+    @tarot_deck = TarotDeck.find(params[:id])
+  end
+
   def create
     deck = TarotDeck.new({
       name: params[:name],
