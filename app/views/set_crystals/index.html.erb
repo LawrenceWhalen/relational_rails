@@ -1,5 +1,8 @@
 <h1><%= @set.collection_name %> Collection </h1>
 <% @crystals.each do |crystal| %>
   <%= link_to crystal.name, "/crystals/#{crystal.id}" %>
+  <p>Price: $<%= crystal.price %></p>
+  <p>Charged:<%= crystal.charged %></p>
+  <p>Meaning:<%= crystal.description %></p>
 <% end %>
 
