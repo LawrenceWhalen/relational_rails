@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/tarot_decks/new', to: 'tarot_decks#new'
   get '/tarot_decks/:id', to: 'tarot_decks#deck'
   post '/tarot_decks', to: 'tarot_decks#create'
+  get '/readings', to: 'readings#index'
 end
