@@ -13,6 +13,12 @@ RSpec.describe 'Crystal set crystals index' do
     @emerald = @set.crystals.create!(name: "Emerald", price: 100.99, charged: true, description: "Love/Compassion/Abundance")
   end
   
+  it 'shows all crystal_set name' do
+    visit "/crystal_sets/#{@set.id}/crystals"
+    
+    expect(page).to have_content(@set.collection_name)
+  end
+
   it 'shows all the crystals in the crystal set' do
     visit "/crystal_sets/#{@set.id}/crystals"
 
