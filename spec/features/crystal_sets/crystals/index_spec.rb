@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Crystal set crystals index' do
+RSpec.describe 'crystal set crystals index' do
   before :each do
     @set = CrystalSet.create!(collection_name: "Raw Crystal Chunks - 28pc", limited_edition: true, inventory: 3)
     @larimar = @set.crystals.create!(name: "Larimar", price: 4.55, charged: true, description: "Peace/Relaxation/Communication")
