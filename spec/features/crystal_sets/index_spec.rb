@@ -10,11 +10,14 @@ RSpec.describe 'crystal set index' do
   #within blocks 
   # expect(model_name.column_name).to appear_before(whatever)
   # https://github.com/jmondo/orderly
-  it 'shows all crystal set collection names in order of most recently created' do 
-    set_1 = CrystalSet.create!(collection_name: "Raw Crystal Chunks - 28pc", limited_edition: false, inventory: 1000)
-    set_2 = CrystalSet.create!(collection_name: "Intuitively Chosen Raw Crystals", limited_edition: true, inventory: 250)
-    visit "/crystal_sets"
 
-    expect(page).to have_content(set_2.created_at)
-  end 
+  it 'can see all crystal sets and their creation date' do 
+    set = CrystalSet.create!(collection_name: "Raw Crystal Chunks - 28pc", limited_edition: false, inventory: 1000)
+
+    visit '/crystal_sets'
+
+    expect(page).to have_content(set.collection_name)
+    expect(page).to have_content(set.limited_edition)
+    expect(page).to have_content(set.created_at.strftime('%m/%d/%y'))
+  end
 end
