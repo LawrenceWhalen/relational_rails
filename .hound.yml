@@ -1,2 +1,5 @@
 rubocop:
   config_file: .rubocop.yml
+erblint:
+  enabled: true
+  config_file: .erb-lint.yml

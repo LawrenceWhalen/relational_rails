@@ -1,0 +1,8 @@
+<h1>Crystals</h1>
+
+<% @crystals.each do |crystal| %>
+  <h2><%= crystal.name %></h2>
+  <p>Price: $<%= crystal.price %></p>
+  <p>Charged:<%= crystal.charged %></p>
+  <p>Meaning:<%= crystal.description %></p>
+<% end %>
