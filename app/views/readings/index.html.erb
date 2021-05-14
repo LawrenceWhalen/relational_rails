@@ -1,0 +1,9 @@
+<h1>Readings:</h1>
+
+<% @readings.each do |reading| %>
+  <h2><%= reading[:spread] %></h2>
+  <h3><%= reading[:cards_drawn] %></h3>
+  <h3><%= reading[:attendees_num] %></h3>
+  <h3><%= reading[:major_reading] %></h3>
+  <h3><%= reading[:interpretation] %></h3>
+<% end %>

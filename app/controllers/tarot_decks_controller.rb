@@ -14,8 +14,12 @@ class TarotDecksController < ApplicationController
   def create
     deck = TarotDeck.new({
       name: params[:name],
-      number_made: params[:number_made],
-      pre_owned: params[:pre_owned],
+      number_made: params[:number_made].to_i,
+      if params[:pre_owned] != nil
+        pre_owned: true
+      else
+        pre_owned: false
+      end
       })
     deck.save
 
