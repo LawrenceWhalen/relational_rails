@@ -18,10 +18,14 @@ RSpec.describe 'crystal set index' do
 
   it 'shows crystal sets in order of date created' do
     visit '/crystal_sets'
-    save_and_open_page
     full_set_name_1 = "Intuitively Chosen Raw Crystals Collection created at: #{@set_2.created_at.strftime('%m/%d/%y')}"
     full_set_name_2 = "Raw Crystal Chunks - 28pc Collection created at: #{@set_1
     .created_at.strftime('%m/%d/%y')}"
+    
     expect(full_set_name_1).to appear_before(full_set_name_2, only_text: true)
+  end
+
+  it 'has link to crystals index page' do
+    expect(page).to have_link("Crystals", href: '/crystals/')
   end
 end
