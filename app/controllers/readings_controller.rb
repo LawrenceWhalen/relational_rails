@@ -7,15 +7,16 @@ class ReadingsController < ApplicationController
   end
 
   def create
+    if params[:major_reading] != nil
+      boolean = true
+    else
+      boolean = false
+    end
     reading = Reading.new({
       spread: params[:spread],
-      if params[:major_reading] != nil
-        major_reading: true
-      else
-        major_reading: false
-      end,
-      cards_drawn: params[:cards_drawn].split(' ,'),
-      attendees_num: params[:attendees_num].to_i
+      major_reading: boolean,
+      cards_drawn: params[:cards_drawn].split(',').to_s,
+      attendees_num: params[:attendees_num].to_i,
       interpretation: params[:interpretation]
       })
     reading.save
