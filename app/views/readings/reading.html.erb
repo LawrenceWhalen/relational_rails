@@ -1,1 +1,8 @@
-require "pry"; binding.pry
+<h1><%= "#{TarotDeck.find(@reading.tarot_deck_id)} reading: #{@reading.spread}" %></h1>
+
+<ul>
+  <li><%= "Cards drawn: #{@reading.cards_drawn}" %></li>
+  <li><%= "Interpretation: #{@reading.interpretation}" %></li>
+  <li><%= "People in attendance: #{@reading.attendees_num}" %></li>
+  <li><%= "Major reading: #{@reading.major_reading}" %></li>
+</ul>

@@ -19,21 +19,21 @@ RSpec.describe 'the Tarot Deck id page' do
       spread: 'Five Card',
       major_reading: false,
       cards_drawn: 'Fool Maji',
-      attendees_num: 1,
+      attendees_num: 18,
       interpretation: 'I will live'
     )
 
-    visit "/reading/#{reading.id}"
+    visit "/readings/#{reading_1.id}"
 
     expect(page).to have_content(reading_1.spread)
     expect(page).to have_content(reading_1.major_reading)
     expect(page).to have_content(reading_1.cards_drawn)
     expect(page).to have_content(reading_1.attendees_num)
     expect(page).to have_content(reading_1.interpretation)
-    expect(page).to have_content(reading_2.spread)
-    expect(page).to have_content(reading_2.major_reading)
-    expect(page).to have_content(reading_2.cards_drawn)
-    expect(page).to have_content(reading_2.attendees_num)
-    expect(page).to have_content(reading_2.interpretation)
+    expect(page).to_not have_content(reading_2.spread)
+    expect(page).to_not have_content(reading_2.major_reading)
+    expect(page).to_not have_content(reading_2.cards_drawn)
+    expect(page).to_not have_content(reading_2.attendees_num)
+    expect(page).to_not have_content(reading_2.interpretation)
   end
 end
