@@ -1,4 +1,5 @@
 <h1> Crystal Sets </h1>
+<a href="/crystals">All Crystals</a>
 <% @crystal_sets.each do |set| %>
     <h2><%= set.collection_name %> Collection created at: <%= set.created_at.strftime('%m/%d/%y') %></h2>
     <p>Limited Edition: <%= set.limited_edition %></p>
