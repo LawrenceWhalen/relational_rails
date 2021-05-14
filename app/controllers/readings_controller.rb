@@ -4,6 +4,11 @@ class ReadingsController < ApplicationController
   end
 
   def new
+
+  end
+
+  def reading
+    @reading = Reading.find(params[:id])
   end
 
   def create
