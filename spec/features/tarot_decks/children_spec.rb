@@ -29,7 +29,7 @@ RSpec.describe 'the Tarot Deck children table' do
       interpretation: 'I will live'
     )
 
-    reading_3 = deck_1.readings.create(
+    reading_3 = deck_2.readings.create(
       spread: 'Horseshoe',
       major_reading: false,
       cards_drawn: 'Taco Plant',
@@ -37,7 +37,8 @@ RSpec.describe 'the Tarot Deck children table' do
       interpretation: 'This is not a Tarot Deck'
     )
 
-    visit "/readings/#{reading_1.id}"
+    visit "/tarot_decks/#{deck_1.id}/readings"
+    save_and_open_page
 
     expect(page).to have_content(reading_1.spread)
     expect(page).to have_content(reading_1.major_reading)

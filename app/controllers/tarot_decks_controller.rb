@@ -26,4 +26,9 @@ class TarotDecksController < ApplicationController
 
     redirect_to '/tarot_decks'
   end
+
+  def children
+    @deck = TarotDeck.find(params[:id])
+    @readings = Reading.where(tarot_deck_id: params[:id])
+  end
 end
