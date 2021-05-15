@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/readings/new', to: 'readings#new'
   get '/readings/:id', to: 'readings#reading'
   post '/readings', to: 'readings#create'
+  get '/tarot_decks/:id/readings', to: 'tarot_decks#children'
 end
