@@ -44,6 +44,7 @@ group :development, :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'orderly'
+  gem 'shoulda-matchers'
 end
 
 group :development do
