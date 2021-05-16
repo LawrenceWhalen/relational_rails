@@ -36,4 +36,25 @@ ActiveRecord::Schema.define(version: 2021_05_14_004940) do
   end
 
   add_foreign_key "readings", "tarot_decks"
+
+  create_table "crystal_sets", force: :cascade do |t|
+    t.string "collection_name"
+    t.boolean "limited_edition"
+    t.integer "inventory"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "crystals", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.boolean "charged"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "crystal_set_id"
+    t.index ["crystal_set_id"], name: "index_crystals_on_crystal_set_id"
+  end
+
+  add_foreign_key "crystals", "crystal_sets"
 end
