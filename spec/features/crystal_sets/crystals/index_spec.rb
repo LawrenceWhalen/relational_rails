@@ -29,4 +29,12 @@ RSpec.describe 'crystal set crystals index' do
     
     expect(current_path).to eq("/crystals/#{@larimar.id}")
   end
+
+  it 'links to crystal set index page' do
+    visit "/crystal_sets/#{@set.id}/crystals"
+
+    save_and_open_page
+
+    expect(page).to have_link("Back to Crystal Sets", href: '/crystal_sets')
+  end
 end
