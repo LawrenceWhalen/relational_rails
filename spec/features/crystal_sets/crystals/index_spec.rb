@@ -1,5 +1,4 @@
 #spec/features/crystal_sets/crystals/index_spec
-
 require 'rails_helper'
 
 RSpec.describe 'crystal set crystals index' do
@@ -9,7 +8,7 @@ RSpec.describe 'crystal set crystals index' do
     @emerald = @set.crystals.create!(name: "Emerald", price: 100.99, charged: true, description: "Love/Compassion/Abundance")
   end
 
-  it 'shows all crystal_set name' do
+  it 'shows all crystal set name' do
     visit "/crystal_sets/#{@set.id}/crystals"
     
     expect(page).to have_content(@set.collection_name)
@@ -30,17 +29,18 @@ RSpec.describe 'crystal set crystals index' do
     expect(current_path).to eq("/crystals/#{@larimar.id}")
   end
 
-  it 'links to crystal set index page' do
-    visit "/crystal_sets/#{@set.id}/crystals"
+  it 'links to crystal sets index page' do
+    visit "/crystals"
+    click_on "Back to Crystal Sets"
 
-    save_and_open_page
-
-    expect(page).to have_link("Back to Crystal Sets", href: "/crystal_sets")
+    expect(current_path).to eq("/crystal_sets")
   end
+
 
   it 'links to crystals index page' do
     visit "/crystal_sets/#{@set.id}/crystals"
+    click_on "All Crystals"
 
-    expect(page).to have_link("All Crystals", href: "/crystals")
+    expect(current_path).to eq("/crystals")
   end
 end
