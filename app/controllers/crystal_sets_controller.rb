@@ -8,4 +8,7 @@ class CrystalSetsController < ApplicationController
   def show
     @crystal_set = CrystalSet.find(params[:id])
   end
+
+  def new
+  end
 end
