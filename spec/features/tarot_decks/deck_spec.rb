@@ -53,7 +53,18 @@ RSpec.describe 'the Tarot Deck id page' do
     )
 
     visit("/tarot_decks/#{deck_1.id}")
-    save_and_open_page
+
     expect(page).to have_content('Readings logged with this deck: 3')
+  end
+  it 'has a link to its child page' do
+    deck = TarotDeck.create!(
+      name: 'Programs',
+      number_made: 15,
+      pre_owned: false,
+      )
+
+    visit "/tarot_decks/#{deck.id}"
+
+    expect(page).to have_selector(:css, "a[href='/tarot_decks/#{deck.id}/children']")
   end
 end
