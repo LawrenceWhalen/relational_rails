@@ -53,7 +53,7 @@ RSpec.describe 'the Tarot Deck id page' do
     )
 
     visit("/tarot_decks/#{deck_1.id}")
-
+    # save_and_open_page
     expect(page).to have_content('Readings logged with this deck: 3')
   end
 end

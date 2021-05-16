@@ -9,6 +9,7 @@ class TarotDecksController < ApplicationController
 
   def deck
     @tarot_deck = TarotDeck.find(params[:id])
+    @readings = Reading.where(:tarot_deck_id => params[:id]).count
   end
 
   def create
