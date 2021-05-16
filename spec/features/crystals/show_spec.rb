@@ -23,4 +23,18 @@ RSpec.describe 'the crystal show page' do
     expect(page).to have_content(@larimar.crystal_set.collection_name)
     expect(page).to_not have_content(@emerald.crystal_set)
   end
+
+  it 'links to crystal sets index page' do
+    visit "/crystals/#{@larimar.id}"
+    click_on "Back to Crystal Sets"
+
+    expect(current_path).to eq("/crystal_sets")
+  end
+
+  it 'links to crystals index page' do
+    visit "/crystals/#{@larimar.id}"
+    click_on "All Crystals"
+
+    expect(current_path).to eq("/crystals")
+  end
 end
