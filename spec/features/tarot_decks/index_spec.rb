@@ -43,8 +43,6 @@ RSpec.describe 'the Tarot Deck index' do
 
     visit "/tarot_decks"
 
-    save_and_open_page
-
     created_first = deck3.name
     created_second = deck2.name
     expect(page).to have_content(deck1.created_at)
