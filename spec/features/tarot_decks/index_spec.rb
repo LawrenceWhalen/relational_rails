@@ -24,28 +24,32 @@ RSpec.describe 'the Tarot Deck index' do
       name: 'Programs',
       number_made: 15,
       pre_owned: false,
+      created_at: '2021-05-16 00:57:47 UTC'
       )
     deck2 = TarotDeck.create!(
       name: 'AAA',
       number_made: 15,
       pre_owned: false,
+      created_at: '2021-05-15 00:57:47 UTC'
       )
 
     deck3 = TarotDeck.create!(
       name: 'Witches',
       number_made: 1,
       pre_owned: false,
+      created_at: '2021-05-14 00:57:47 UTC'
       )
 
 
     visit "/tarot_decks"
 
+    save_and_open_page
 
+    created_first = deck3.name
+    created_second = deck2.name
     expect(page).to have_content(deck1.created_at)
     expect(page).to have_content(deck2.created_at)
     expect(page).to have_content(deck3.created_at)
-    expect(page.find('h3:nth-child(1)')).to have_content(deck1.name)
-    expect(page.find('h3:nth-child(2)')).to have_content(deck2.name)
-    expect(page.find('h3:nth-child(3)')).to have_content(deck3.name)
+    expect(created_first).to appear_before(created_second)
   end
 end

@@ -2,4 +2,7 @@
 
 <% @tarot_decks.each do |deck| %>
   <h3><%= deck[:name] %></h3>
+  <ul>
+    <li><%= deck[:created_at] %></li>
+  </ul>
 <% end %>

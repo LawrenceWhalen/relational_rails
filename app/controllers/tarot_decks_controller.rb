@@ -1,6 +1,6 @@
 class TarotDecksController < ApplicationController
   def index
-    @tarot_decks = TarotDeck.all
+    @tarot_decks = TarotDeck.order(:created_at)
   end
 
   def new
