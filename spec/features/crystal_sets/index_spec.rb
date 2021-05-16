@@ -26,8 +26,9 @@ RSpec.describe 'crystal set index' do
     expect(full_set_name_1).to appear_before(full_set_name_2, only_text: true)
   end
 
-  it 'has link to crystals index page' do\
+  it 'links to crystals index page' do\
     visit '/crystal_sets'
+    
     expect(page).to have_link("All Crystals", href: '/crystals')
   end
 end
