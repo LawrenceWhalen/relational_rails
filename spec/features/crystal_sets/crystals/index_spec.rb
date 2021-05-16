@@ -23,7 +23,6 @@ RSpec.describe 'crystal set crystals index' do
 
   it 'links to each crystal show page' do
     visit "/crystal_sets/#{@set.id}/crystals"
-
     click_on @larimar.name
     
     expect(current_path).to eq("/crystals/#{@larimar.id}")
@@ -35,7 +34,6 @@ RSpec.describe 'crystal set crystals index' do
 
     expect(current_path).to eq("/crystal_sets")
   end
-
 
   it 'links to crystals index page' do
     visit "/crystal_sets/#{@set.id}/crystals"

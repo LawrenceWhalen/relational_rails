@@ -8,7 +8,6 @@ RSpec.describe 'crystal set index' do
   end
 
   it 'can see all crystal sets and their creation date' do 
-
     visit '/crystal_sets'
 
     expect(page).to have_content(@set_1.collection_name)
