@@ -38,7 +38,6 @@ RSpec.describe 'the Tarot Deck children table' do
     )
 
     visit "/tarot_decks/#{deck_1.id}/readings"
-    save_and_open_page
 
     expect(page).to have_content(reading_1.spread)
     expect(page).to have_content(reading_1.major_reading)
