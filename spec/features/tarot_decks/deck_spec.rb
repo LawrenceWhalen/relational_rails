@@ -65,6 +65,10 @@ RSpec.describe 'the Tarot Deck id page' do
 
     visit "/tarot_decks/#{deck.id}"
 
-    expect(page).to have_selector(:css, "a[href='/tarot_decks/#{deck.id}/children']")
+    page.should have_selector("[value='View Readings']")
+
+    click_button('View Readings')
+
+    expect(current_path).to eq("/tarot_decks/#{deck.id}/readings")
   end
 end

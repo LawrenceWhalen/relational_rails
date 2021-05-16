@@ -1,12 +1,13 @@
-<h1><%= "#{@deck.name} Readings:"%></h1><br><br>
-
-<% @readings.each do |reading| %>
-<h2><%= "Reading number #{reading.id}: " %></h2>
-<ul>
-  <li><%= "Spread used: #{reading.spread}" %></li>
-  <li><%= "Cards drawn: #{reading.cards_drawn}" %></li>
-  <li><%= "Interpretation: #{reading.interpretation}" %></li>
-  <li><%= "People in attendance: #{reading.attendees_num}" %></li>
-  <li><%= "Major reading: #{reading.major_reading}" %></li>
-</ul>
-<% end %>
+<h1><%= "Readings using the #{@deck.name} deck:"%></h1><br><br>
+<div class="right top">
+  <% @readings.each do |reading| %>
+  <h3><%= "Reading number #{reading.id}: " %></h3>
+    <ul>
+      <li><%= "Spread used: #{reading.spread}" %></li>
+      <li><%= "Cards drawn: #{reading.cards_drawn}" %></li>
+      <li><%= "Interpretation: #{reading.interpretation}" %></li>
+      <li><%= "People in attendance: #{reading.attendees_num}" %></li>
+      <li><%= "Major reading: #{reading.major_reading}" %></li>
+    </ul>
+  <% end %>
+</div>

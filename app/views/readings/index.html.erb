@@ -1,11 +1,13 @@
 <h1>Readings:</h1>
 
-<% @readings.each do |reading| %>
-<h2><%= "#{TarotDeck.find(reading.tarot_deck_id).name} reading: #{reading.spread}" %></h2>
-<ul>
-  <li><%= "Cards drawn: #{reading.cards_drawn}" %></li>
-  <li><%= "Interpretation: #{reading.interpretation}" %></li>
-  <li><%= "People in attendance: #{reading.attendees_num}" %></li>
-  <li><%= "Major reading: #{reading.major_reading}" %></li>
-</ul>
-<% end %>
+<div class="right">
+  <% @readings.each do |reading| %>
+  <h2><%= "#{TarotDeck.find(reading.tarot_deck_id).name} reading: #{reading.spread}" %></h2>
+  <ul>
+    <li><%= "Cards drawn: #{reading.cards_drawn}" %></li>
+    <li><%= "Interpretation: #{reading.interpretation}" %></li>
+    <li><%= "People in attendance: #{reading.attendees_num}" %></li>
+    <li><%= "Major reading: #{reading.major_reading}" %></li>
+  </ul>
+  <% end %>
+</div>

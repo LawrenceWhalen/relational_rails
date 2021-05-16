@@ -42,3 +42,12 @@
  .main {
    margin-top: 50px; /* Add a top margin to avoid content overlay */
  }
+
+ .right {
+   position: relative;
+   left: 30px;
+ }
+
+ .right.top {
+   top: -50px;
+ }
