@@ -1,5 +1,5 @@
 <a href="/crystal_sets">Back to Crystal Sets</a>
-<h1><%= @crystal_set.collection_name %> </h1>
-  <p>Holds <%= @crystal_set.crystal_count %> Crystals</p>
+ <h1><%= @crystal_set.collection_name %><h2>
+  <p>Holds <%= link_to @crystal_set.crystal_count, "/crystal_sets/#{@crystal_set.id}/crystals" %> Crystals</p>
   <p>Limited Edition:<%= @crystal_set.limited_edition %></p>
   <p>Inventory: <%= @crystal_set.inventory %></p>
