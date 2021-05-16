@@ -35,8 +35,12 @@ RSpec.describe 'crystal set crystals index' do
 
     save_and_open_page
 
-    expect(page).to have_link("Back to Crystal Sets", href: '/crystal_sets')
+    expect(page).to have_link("Back to Crystal Sets", href: "/crystal_sets")
   end
 
-  it 'links to '
+  it 'links to crystals index page' do
+    visit "/crystal_sets/#{@set.id}/crystals"
+
+    expect(page).to have_link("All Crystals", href: "/crystals")
+  end
 end
