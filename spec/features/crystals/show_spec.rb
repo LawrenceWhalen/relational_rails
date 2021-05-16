@@ -37,4 +37,11 @@ RSpec.describe 'the crystal show page' do
 
     expect(current_path).to eq("/crystals")
   end
+
+  it 'links to crystal set show page' do
+    visit "/crystals/#{@larimar.id}"
+    click_on @larimar.crystal_set.collection_name
+    
+    expect(current_path).to eq("/crystal_sets/#{@set.id}")
+  end
 end
