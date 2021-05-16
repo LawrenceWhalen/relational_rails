@@ -25,16 +25,13 @@ RSpec.describe 'crystals index' do
     visit "/crystals"
     click_on "Back to Crystal Sets"
 
-    expect(page).to have_link("Back to Crystal Sets", href: "/crystal_sets")
+    expect(current_path).to eq("/crystal_sets")
   end
 
   it 'links to each crystal show page' do
     visit "/crystal_sets/#{@set.id}/crystals"
-
     click_on @larimar.name
-    click_on @emerald.name
 
     expect(current_path).to eq("/crystals/#{@larimar.id}")
-    expect(current_path).to eq("/crystals/#{@emerald.id}")
   end
 end
