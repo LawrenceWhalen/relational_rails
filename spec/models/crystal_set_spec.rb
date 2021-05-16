@@ -1,10 +1,5 @@
 require 'rails_helper'
 
-# As a visitor
-# When I visit the parent index,
-# I see that records are ordered by most recently created first
-# And next to each of the records I see when it was created
-
 RSpec.describe CrystalSet do
   it {should have_many :crystals}
 
@@ -15,7 +10,7 @@ RSpec.describe CrystalSet do
       @emerald = @set.crystals.create!(name: "Emerald", price: 100.99, charged: true, description: "Love/Compassion/Abundance")
     end 
 
-    it 'returns number of crystals in crystal set'do 
+    it 'returns number of crystals in crystal set' do 
       expect(@set.crystal_count).to eq(2)
     end
   end
