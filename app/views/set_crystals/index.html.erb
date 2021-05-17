@@ -7,3 +7,5 @@
   <p>Charged:<%= crystal.charged %></p>
   <p>Meaning:<%= crystal.description %></p>
 <% end %>
+
+<%= link_to "Add Crystal", "/crystal_sets/#{@set.id}/crystals/new" %>
