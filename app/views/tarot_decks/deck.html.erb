@@ -1,0 +1,7 @@
+<h1><%= @tarot_deck.name %></h1>
+<ul>
+  <li>Number of decks printed: <%= @tarot_deck.number_made %></li>
+  <li>The deck has a previous owner: <%= @tarot_deck.pre_owned %></li>
+  <li>Readings logged with this deck: <%= @tarot_deck.reading_count %></li>
+  <%= button_to "View Readings", "/tarot_decks/#{@tarot_deck.id}/readings", :method => "get" %>
+</ul>
