@@ -19,6 +19,7 @@ class CrystalSetsController < ApplicationController
   end
 
   def edit
+    @crystal_set = CrystalSet.find(params[:id])
   end
 
   private
