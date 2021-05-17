@@ -7,5 +7,17 @@ RSpec.describe 'Crystal Set creation' do
     click_link 'New Crystal Set'
     expect(current_path).to eq('/crystal_sets/new')
   end
-  
+
+  it 'can create a new crystal set' do
+    visit '/crystal_sets/new'
+
+    expect(current_path).to eq("/crystal_sets/new")
+
+    fill_in "Collection Name", with: "Starter Crystal Set with 5 Stones"
+    check "Limited Edition?"
+    click_on "Create Crystal Set"
+    click_button("Create Crystal Set")
+
+    expect(current_path).to eq("/crystal_sets")
+  end
 end
