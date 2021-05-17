@@ -4,7 +4,7 @@
   <%= form.label :number_made, 'Number Made:' %>
   <%= form.number_field :number_made, in: 1..1000, step: 1 %><br><br>
   <%= form.label :pre_owned, 'Pre-Owned?' %>
-  <%= form.check_box :pre_owned, {}, checked_value = true, unchecked_value = false %><br><br>
+  <%= form.check_box :pre_owned, {}, true, false %><br><br>
   <%= form.label :major_readings, 'Major Readings preformed:' %><br><br>
   <%= form.text_area :major_readings, size: "40x3" %><br><br><br><br>
   <%= form.submit "Add Deck" %>

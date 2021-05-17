@@ -1,0 +1,17 @@
+<%= form_with url: '/readings', method: :post do |form| %>
+  <%= form.label :spread, 'Spread Used:' %>
+  <%= form.select :spread, options_for_select([['Three Card'],
+                                                          ['Five Card Cross'],
+                                                          ['Celtic Cross'],
+                                                          ['Ten Card Love'],
+                                                          ['Horseshoe']]) %><br><br>
+  <%= form.label :major_reading, 'Was this a major reading?' %>
+  <%= form.check_box :major_reading, {}, true, false %><br><br>
+  <%= form.label :cards_drawn, 'Cards Drawn (sepereated by commas):' %><br>
+  <%= form.text_area :cards_drawn, cols: 30, rows: 5 %><br><br>
+  <%= form.label :attendees_num, 'People in attendance:' %>
+  <%= form.number_field :attendees_num, in: 1..10, step: 1 %><br><br>
+  <%= form.label :interpretation, 'Interpretation:' %><br>
+  <%= form.text_area :interpretation, cols: 30, rows: 2 %><br><br>
+  <%= form.submit "Add Deck" %>
+<% end %>

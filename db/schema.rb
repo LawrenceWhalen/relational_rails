@@ -10,22 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_05_12_032553) do
-
+ActiveRecord::Schema.define(version: 2021_05_14_004940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  
+
+   create_table "readings", force: :cascade do |t|
+    t.string "spread"
+    t.boolean "major_reading"
+    t.string "cards_drawn"
+    t.integer "attendees_num"
+    t.string "interpretation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "tarot_deck_id"
+    t.index ["tarot_deck_id"], name: "index_readings_on_tarot_deck_id"
+  end
+
   create_table "tarot_decks", force: :cascade do |t|
     t.string "name"
     t.integer "number_made"
     t.boolean "pre_owned"
-    t.string "major_readings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
+
+  add_foreign_key "readings", "tarot_decks"
+
   create_table "crystal_sets", force: :cascade do |t|
     t.string "collection_name"
     t.boolean "limited_edition"
