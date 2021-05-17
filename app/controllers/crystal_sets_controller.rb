@@ -22,6 +22,14 @@ class CrystalSetsController < ApplicationController
     @crystal_set = CrystalSet.find(params[:id])
   end
 
+  def update
+    require 'pry'; binding.pry
+    crystal_set = CrystalSet.find(params[:id])
+    crystal_set.update(crystal_set_params)
+
+    redirect_to '/crystal_sets'
+  end
+
   private
     def crystal_set_params 
       params.permit(:collection_name, :limited_edition, :inventory)
