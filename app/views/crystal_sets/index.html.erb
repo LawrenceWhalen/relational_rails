@@ -1,7 +1,7 @@
 <h1> Crystal Sets </h1>
 <a href="/crystals">All Crystals</a>
 <% @crystal_sets.each do |set| %>
-    <h2><%= link_to set.collection_name, "/crystal_sets/#{set.id}" %> Collection created at: <%= set.created_at.strftime('%m/%d/%y') %></h2>
+    <h2><%= link_to set.collection_name, "/crystal_sets/#{set.id}" %> <%= button_to "Edit #{set.id}", "/crystal_sets/#{set.id}" %> Collection created at: <%= set.created_at.strftime('%m/%d/%y') %></h2>
     <p>Limited Edition: <%= set.limited_edition %></p>
     <p>Inventory: <%= set.inventory %></p>
 <% end %>

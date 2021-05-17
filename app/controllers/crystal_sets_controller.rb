@@ -11,4 +11,15 @@ class CrystalSetsController < ApplicationController
 
   def new
   end
+
+  def create
+    set = CrystalSet.create(crystal_set_params)
+
+    redirect_to "/crystal_sets"
+  end
+
+  private
+    def crystal_set_params 
+      params.permit(:collection_name, :limited_edition, :inventory)
+    end
 end
