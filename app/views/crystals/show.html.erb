@@ -1,0 +1,7 @@
+<a href="/crystal_sets">Back to Crystal Sets</a>
+<a href="/crystals">All Crystals</a>
+<h1><%= @crystal.name %></h1>
+<p><%= link_to @crystal.crystal_set.collection_name, "/crystal_sets/#{@crystal.crystal_set.id}" %></p>
+<p><%= @crystal.price %></p>
+<p><%= @crystal.charged %></p>
+<p><%= @crystal.description %></p>

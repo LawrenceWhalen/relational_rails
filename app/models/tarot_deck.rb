@@ -7,6 +7,5 @@ class TarotDeck < ApplicationRecord
 
   def reading_count
     self.readings.count
-  end
-
+  end  
 end
