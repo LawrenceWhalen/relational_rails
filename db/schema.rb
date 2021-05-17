@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_05_14_004940) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "readings", force: :cascade do |t|
+   create_table "readings", force: :cascade do |t|
     t.string "spread"
     t.boolean "major_reading"
     t.string "cards_drawn"
