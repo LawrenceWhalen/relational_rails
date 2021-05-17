@@ -9,10 +9,14 @@ RSpec.describe CrystalSet do
   it {should have_many :crystals}
 
   describe 'instance methods' do
-    set_1 = CrystalSet.create!(collection_name: "Raw Crystal Chunks - 28pc", limited_edition: false, inventory: 1000)
-    set_2 = CrystalSet.create!(collection_name: "Intuitively Chosen Raw Crystals", limited_edition: true, inventory: 250)
-    sets = [set_1, set_2]
-    
-    expect(sets.order).to eq([set_2, set_1])
+    before :each do
+      @set = CrystalSet.create!(collection_name: "Raw Crystal Chunks - 28pc", limited_edition: true, inventory: 3)
+      @larimar = @set.crystals.create!(name: "Larimar", price: 4.55, charged: true, description: "Peace/Relaxation/Communication")
+      @emerald = @set.crystals.create!(name: "Emerald", price: 100.99, charged: true, description: "Love/Compassion/Abundance")
+    end 
+
+    it 'returns number of crystals in crystal set'do 
+      expect(@set.crystal_count).to eq(2)
+    end
   end
 end
