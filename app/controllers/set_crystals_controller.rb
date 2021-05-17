@@ -2,7 +2,7 @@
 
 class SetCrystalsController < ApplicationController
   def index
-    @set = CrystalSet.find(params[:crystal_set_id])
+    @set = CrystalSet.find(params[:id])
     @crystals = @set.crystals 
   end
 end

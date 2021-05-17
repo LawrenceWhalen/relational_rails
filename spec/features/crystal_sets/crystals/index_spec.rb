@@ -10,7 +10,7 @@ RSpec.describe 'crystal set crystals index' do
 
   it 'shows all crystal set name' do
     visit "/crystal_sets/#{@set.id}/crystals"
-    
+
     expect(page).to have_content(@set.collection_name)
   end
 

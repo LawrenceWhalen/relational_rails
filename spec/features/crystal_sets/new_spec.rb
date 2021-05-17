@@ -15,7 +15,6 @@ RSpec.describe 'Crystal Set creation' do
 
     fill_in "Collection Name", with: "Starter Crystal Set with 5 Stones"
     check "Limited Edition?"
-    click_on "Create Crystal Set"
     click_button("Create Crystal Set")
 
     expect(current_path).to eq("/crystal_sets")
