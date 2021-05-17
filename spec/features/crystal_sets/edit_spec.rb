@@ -8,6 +8,7 @@ RSpec.describe 'Crystal sets edit' do
 
     click_button "Edit #{set.id}"
 
-    expect(current_path).to eq("/crystal_sets/edit")
+    expect(current_path).to eq("/crystal_sets/#{set.id}")
   end
+  
 end

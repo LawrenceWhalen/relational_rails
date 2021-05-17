@@ -18,6 +18,10 @@ class CrystalSetsController < ApplicationController
     redirect_to "/crystal_sets"
   end
 
+  def edit
+    
+  end
+
   private
     def crystal_set_params 
       params.permit(:collection_name, :limited_edition, :inventory)
