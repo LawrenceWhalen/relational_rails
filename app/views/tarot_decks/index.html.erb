@@ -6,4 +6,5 @@
     <li>Added to system on: <%= deck[:created_at] %></li>
   </ul>
 <% end %>
-</div>
+</div><br>
+<%= button_to "Register New Deck", "/tarot_decks/new", :method => "get" %>
