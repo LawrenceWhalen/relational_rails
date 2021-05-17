@@ -20,6 +20,12 @@
    position: fixed; /* Set the navbar to fixed position */
    top: 0; /* Position the navbar at the top of the page */
    width: 100%; /* Full width */
+   z-index: 2
+ }
+
+ .things-in-a-line{
+   display: flex;
+   flex-direction: row; /* this is actually the default, but I put it here for clarity reasons */
  }
 
  /* Links inside the navbar */

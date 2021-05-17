@@ -1,3 +1,8 @@
+<header class="navbar">
+  <a href="/tarot_decks">Tarot Decks</a>
+  <a href="/readings">Readings</a>
+</header>
+<div class="main">
 <h1><%= "Readings using the #{@deck.name} deck:"%></h1><br><br>
 <div class="right top">
   <% @readings.each do |reading| %>
@@ -10,4 +15,5 @@
       <li><%= "Major reading: #{reading.major_reading}" %></li>
     </ul>
   <% end %>
+</div>
 </div>

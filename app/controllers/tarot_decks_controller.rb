@@ -12,23 +12,28 @@ class TarotDecksController < ApplicationController
   end
 
   def create
-    if params[:pre_owned] != nil
-      boolean = true
-    else
-      boolean = false
-    end
-    deck = TarotDeck.new({
-      name: params[:name],
-      number_made: params[:number_made].to_i,
-      pre_owned: boolean
-      })
-    deck.save
+    TarotDeck.create!({
+    name: params[:name],
+    number_made: params[:number_made].to_i,
+    pre_owned: params[:pre_owned]
+    })
 
-    redirect_to '/tarot_decks'
+    redirect_to "/tarot_decks"
   end
 
   def children
     @deck = TarotDeck.find(params[:id])
     @readings = Reading.where(tarot_deck_id: params[:id])
+  end
+
+  def edit
+    @deck = TarotDeck.find(params[:id])
+  end
+
+  def update
+    deck = TarotDeck.find(params[:id])
+    require "pry"; binding.pry
+    deck.update(params)
+    redirect_to "/tarot_decks"
   end
 end
