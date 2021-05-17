@@ -1,10 +1,6 @@
 #spec/features/crystal_sets/show_spec.rb
 require 'rails_helper'
 
-# As a visitor
-# When I visit a parent's show page
-# I see a count of the number of children associated with this parent'
-
 RSpec.describe 'the crystal set show page' do
   before :each do
     @set_1 = CrystalSet.create!(collection_name: "Raw Crystal Chunks - 28pc", limited_edition: true, inventory: 3)
@@ -13,7 +9,6 @@ RSpec.describe 'the crystal set show page' do
 
   it 'displays crystal set and its attributes' do
     visit "/crystal_sets/#{@set_1.id}"
-    save_and_open_page    
 
     expect(page).to have_content(@set_1.collection_name)
     expect(page).to have_content(@set_1.limited_edition)
@@ -23,7 +18,19 @@ RSpec.describe 'the crystal set show page' do
 
   it 'displays number of crystals in crystal set' do
     visit "/crystal_sets/#{@set_1.id}"
-    save_and_open_page
+
     expect(page).to have_content(@set_1.crystal_count)
+  end
+
+  it 'links to crystal set index page' do
+    visit "/crystal_sets/#{@set_1.id}"
+
+    expect(page).to have_link("Back to Crystal Sets", href: "/crystal_sets")
+  end
+
+  it 'links to index page of all crystals in crystal set' do
+    visit "/crystal_sets/#{@set_1.id}"
+    
+    expect(page).to have_link("#{@set_1.crystal_count}", href: "/crystal_sets/#{@set_1.id}/crystals")
   end
 end
