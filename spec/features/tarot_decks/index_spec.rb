@@ -50,14 +50,4 @@ RSpec.describe 'the Tarot Deck index' do
     expect(page).to have_content(deck3.created_at)
     expect(created_first).to appear_before(created_second)
   end
-  it 'has a link to create a new deck' do
-
-    visit '/tarot_decks'
-
-    page.should have_selector("[value='Register New Deck']")
-
-    click_button('Register New Deck')
-
-    expect(current_path).to eq("/tarot_decks/new")
-  end
 end
