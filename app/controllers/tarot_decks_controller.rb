@@ -32,8 +32,9 @@ class TarotDecksController < ApplicationController
 
   def update
     deck = TarotDeck.find(params[:id])
-    require "pry"; binding.pry
-    deck.update(params)
+    deck.update(name: params[:name])
+    deck.update(number_made: params[:number_made].to_i)
+    deck.update(pre_owned: params[:pre_owned])
     redirect_to "/tarot_decks"
   end
 end

@@ -14,7 +14,7 @@ RSpec.describe 'updating a Tarot Deck' do
 
     click_button('Update Deck')
 
-    expect(current_path).to eq("/tarot_decks/#{deck.id}/update")
+    expect(current_path).to eq("/tarot_decks/#{deck.id}/edit")
   end
   it 'can edit a tarot deck' do
     deck = TarotDeck.create!(
@@ -23,7 +23,7 @@ RSpec.describe 'updating a Tarot Deck' do
       pre_owned: false
       )
 
-    visit "/tarot_decks/#{deck.id}/update"
+    visit "/tarot_decks/#{deck.id}/edit"
 
     fill_in('Deck Name', with: 'Hunters')
 
