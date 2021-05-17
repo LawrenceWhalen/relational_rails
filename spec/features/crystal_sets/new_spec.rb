@@ -12,7 +12,7 @@ RSpec.describe 'Crystal Set creation' do
     visit '/crystal_sets/new'
 
     expect(current_path).to eq("/crystal_sets/new")
-
+ 
     fill_in "Collection Name", with: "Starter Crystal Set with 5 Stones"
     check "Limited Edition?"
     click_button("Create Crystal Set")
