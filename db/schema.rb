@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_05_12_032553) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
+  
+  create_table "tarot_decks", force: :cascade do |t|
+    t.string "name"
+    t.integer "number_made"
+    t.boolean "pre_owned"
+    t.string "major_readings"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  
   create_table "crystal_sets", force: :cascade do |t|
     t.string "collection_name"
     t.boolean "limited_edition"
