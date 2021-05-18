@@ -2,7 +2,8 @@
   <%= link_to "Sort Alphabetically", "/crystal_sets/#{@crystal_set.id}/crystals/?alphabetical=true" %>
   <h1><%= @crystal_set.collection_name %> Collection </h1>
   <% @crystals.each do |crystal| %>
-    <%= link_to crystal.name, "/crystals/#{crystal.id}" %>
+    <h2><%= link_to crystal.name, "/crystals/#{crystal.id}" %></h2>
+    <%= button_to "Edit #{crystal.name}", "/crystals/#{crystal.id}/edit", method: :get %> 
     <p>Price: $<%= crystal.price %></p>
     <p>Charged:<%= crystal.charged %></p>
     <p>Meaning:<%= crystal.description %></p>
