@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   patch '/crystal_sets/:id', to: 'crystal_sets#update'
 
   get '/crystal_sets/:id/crystals', to: 'set_crystals#index'
-  get '/crystal_sets/:id/crystals/new', to: 'set_crystals#new' 
+  get '/crystal_sets/:id/crystals/new', to: 'set_crystals#new'
+  post '/crystal_sets/:id/crystals', to: 'set_crystals#create' 
   get '/crystals', to: 'crystals#index'
   get '/crystals/:id', to: 'crystals#show'
 

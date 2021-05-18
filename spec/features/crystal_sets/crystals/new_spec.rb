@@ -8,13 +8,15 @@ RSpec.describe 'Crystal Set Crystal creation' do
 
   it 'links to the new page from set crystal index' do
     visit "/crystal_sets/#{@set.id}/crystals"
+
     click_link "Add Crystal"
+ 
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/new")
   end
 
   it 'can create a new crystal' do
     visit "/crystal_sets/#{@set.id}/crystals/new"
-
+    
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/new")
 
     fill_in "Name", with: "Amethyst"
@@ -25,5 +27,4 @@ RSpec.describe 'Crystal Set Crystal creation' do
 
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals")
   end
-
 end
