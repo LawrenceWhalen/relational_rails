@@ -65,7 +65,7 @@ RSpec.describe 'the Tarot Deck id page' do
 
     visit "/tarot_decks/#{deck.id}"
 
-    page.should have_selector("[value='View Readings']")
+    expect(page).to have_selector("[value='View Readings']")
 
     click_button('View Readings')
 

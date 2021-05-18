@@ -18,10 +18,10 @@ RSpec.describe 'Crystals edit' do
 
   it 'can edit the crystal' do
     visit "/crystals/#{@emerald.id}"
-   
+
     expect(page).to have_content("Emerald")
     click_button "Edit #{@emerald.name}"
-    save_and_open_page
+
     fill_in 'Name', with: "Green Emerald"
     click_button 'Update Crystal'
   end

@@ -4,7 +4,7 @@ RSpec.describe 'the Tarot Deck creation' do
   it 'links to the new page from the tarot deck index' do
     visit '/tarot_decks'
 
-    page.should have_selector("[value='Register New Deck']")
+    expect(page).to have_selector("[value='Register New Deck']")
 
     click_button('Register New Deck')
 

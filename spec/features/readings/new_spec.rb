@@ -11,7 +11,7 @@ RSpec.describe 'Reading creation' do
 
     visit "/tarot_decks/#{deck.id}/readings"
 
-    page.should have_selector("[value='Add New Reading']")
+    expect(page).to have_selector("[value='Add New Reading']")
 
     click_button('Add New Reading')
 
@@ -26,7 +26,7 @@ RSpec.describe 'Reading creation' do
       )
 
     visit "/tarot_decks/#{deck.id}/readings"
-
+save_and_open_page
     click_button('Add New Reading')
 
     fill_in('Cards Drawn (sepereated by commas):', with: 'Maji')
