@@ -23,7 +23,6 @@ class CrystalSetsController < ApplicationController
   end
 
   def update
-    require 'pry'; binding.pry
     crystal_set = CrystalSet.find(params[:id])
     crystal_set.update(crystal_set_params)
 
