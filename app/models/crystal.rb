@@ -8,6 +8,6 @@ class Crystal < ApplicationRecord
   end
 
   def self.order_alphabetically
-    order('name')
+   order('name')
   end
 end
