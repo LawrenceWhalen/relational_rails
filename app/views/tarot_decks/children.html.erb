@@ -1,9 +1,5 @@
-<header class="navbar">
-  <a href="/tarot_decks">Tarot Decks</a>
-  <a href="/readings">Readings</a>
-</header>
-<div class="main">
-<h1><%= "Readings using the #{@deck.name} deck:"%></h1><br><br>
+<h1><%= "Readings using the #{@deck.name} deck:"%><%= button_to "Add New Reading", "/tarot_decks/#{@deck.id}/readings/new", :method => "get" %></h1><br><br>
+
 <div class="right top">
   <% @readings.each do |reading| %>
   <h3><%= "Reading number #{reading.id}: " %></h3>
@@ -15,5 +11,3 @@
       <li><%= "Major reading: #{reading.major_reading}" %></li>
     </ul>
   <% end %>
-</div>
-</div>

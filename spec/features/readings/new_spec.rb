@@ -1,24 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe 'Reading creation' do
-  it 'links to the new page from the tarot deck show page' do
-    visit '/tarot_decks'
+  it 'links to the new page from the tarot deck children page' do
 
-    page.should have_selector("[value='Register New Deck']")
+    deck = TarotDeck.create!(
+      name: 'Programs',
+      number_made: 15,
+      pre_owned: false
+      )
 
-    click_button('Register New Deck')
+    visit "/tarot_decks/#{deck.id}/readings"
 
-    expect(current_path).to eq('/tarot_decks/new')
+    page.should have_selector("[value='Add New Reading']")
+
+    click_button('Add New Reading')
+
+    expect(current_path).to eq("/tarot_decks/#{deck.id}/readings/new")
   end
-  it 'can create a new tarot deck' do
-    visit '/tarot_decks/new'
-    fill_in('Deck Name', with: 'Hunters')
-    fill_in('Number Made', with: 6)
-    check('Pre-Owned')
-    click_button('Add Deck')
+  it 'can create a new child reading' do
 
-    new_deck_id = TarotDeck.last.id
-    expect(current_path).to eq("/tarot_decks")
-    expect(page).to have_content("Hunters")
+    deck = TarotDeck.create!(
+      name: 'Programs',
+      number_made: 15,
+      pre_owned: false
+      )
+
+    visit "/tarot_decks/#{deck.id}/readings"
+
+    click_button('Add New Reading')
+
+    fill_in('Cards Drawn (sepereated by commas):', with: 'Maji')
+    fill_in('People in attendance:', with: 2)
+    check('Was this a major reading?')
+    fill_in('Interpretation:', with: 'We will survive')
+    click_button('Add New Reading')
+
+
+    expect(current_path).to eq("/readings/#{deck.id}/readings")
+    expect(page).to have_content("Maji")
   end
 end

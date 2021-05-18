@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post '/readings', to: 'readings#create'
   patch '/tarot_decks/:id', to: 'tarot_decks#update'
   get '/tarot_decks/:id/edit', to: 'tarot_decks#edit'
+  get '/tarot_decks/:id/readings/new', to: 'readings#new'
 end
