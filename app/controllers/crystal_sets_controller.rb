@@ -2,7 +2,7 @@
 
 class CrystalSetsController < ApplicationController
   def index
-    @crystal_sets = CrystalSet.all.order(:created_at).reverse_order 
+    @crystal_sets = CrystalSet.order_most_recently_created
   end
 
   def show
