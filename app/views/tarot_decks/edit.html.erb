@@ -1,0 +1,19 @@
+<header class="navbar">
+  <a href="/tarot_decks">Tarot Decks</a>
+  <a href="/readings">Readings</a>
+</header>
+<div class="main">
+
+<h2><%= "Update #{@deck.name}:" %></h2>
+<div class="right">
+  <%= form_with url: "/tarot_decks/#{@deck.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name, 'Deck Name:' %>
+    <%= form.text_field :name, value: @deck.name %><br><br>
+    <%= form.label :number_made, 'Number Made:' %>
+    <%= form.number_field :number_made, in: 1..1000, step: 1, value: @deck.number_made %><br><br>
+    <%= form.label :pre_owned, 'Pre-Owned?' %>
+    <%= form.check_box :pre_owned, { checked: @deck.pre_owned }, checked_value = true, unchecked_value = false %><br><br>
+    <%= form.submit "Update Deck" %>
+  <% end %>
+</div>
+</div>

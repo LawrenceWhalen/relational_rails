@@ -23,6 +23,12 @@
    z-index: 2
  }
 
+ .things-in-a-line{
+   display: flex;
+   flex-direction: row; /* this is actually the default, but I put it here for clarity reasons */
+
+ }
+
  /* Links inside the navbar */
  .navbar a {
    float: left;
