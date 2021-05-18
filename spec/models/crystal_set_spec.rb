@@ -13,7 +13,7 @@ RSpec.describe CrystalSet do
 
     it '::order_by_most_recently_created' do
       
-      expect(CrystalSet.order_most_recently_created).to eq([@set_2, @set_1])
+      expect(CrystalSet.order_by_most_recently_created).to eq([@set_2, @set_1])
     end
     
     it '#crystal_count' do
