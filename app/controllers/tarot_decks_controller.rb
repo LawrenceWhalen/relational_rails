@@ -1,7 +1,7 @@
 class TarotDecksController < ApplicationController
 
   def index
-  @tarot_decks = TarotDeck.order(:created_at)
+  @tarot_decks = TarotDeck.order(created_at: :desc)
   end
 
   def new

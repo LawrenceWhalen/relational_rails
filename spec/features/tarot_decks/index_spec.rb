@@ -43,8 +43,8 @@ RSpec.describe 'the Tarot Deck index' do
 
     visit '/tarot_decks'
 
-    created_first = deck3.name
-    created_second = deck2.name
+    created_first = deck2.name
+    created_second = deck3.name
     expect(page).to have_content(deck1.created_at)
     expect(page).to have_content(deck2.created_at)
     expect(page).to have_content(deck3.created_at)
