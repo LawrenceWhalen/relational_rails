@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/crystal_sets/:id', to:'crystal_sets#show'
   get '/crystal_sets/:id/edit', to: "crystal_sets#edit"
   patch '/crystal_sets/:id', to: 'crystal_sets#update'
+  delete '/crystal_sets/:id', to: 'crystal_sets#destroy'
 
   get '/crystal_sets/:id/crystals', to: 'set_crystals#index'
   get '/crystal_sets/:id/crystals/new', to: 'set_crystals#new'

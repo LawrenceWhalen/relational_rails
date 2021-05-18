@@ -7,6 +7,7 @@ RSpec.describe 'destroying a crystal set' do
     set = CrystalSet.create!(collection_name: "Moon Charged Stones", )
 
     visit '/crystal_sets'
+
     click_button 'Delete'
 
     expect(current_path).to eq('/crystal_sets')
