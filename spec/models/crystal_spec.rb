@@ -11,10 +11,9 @@ RSpec.describe Crystal do
       @amethyst= @set.crystals.create!(name: "Ametheyst", price: 12.99, charged: false, description: "Stress Relief/Protection")
     end
 
-    it '::show_only_true'
-
-      expect(Crystal.show_only_tue).to eq([@larimar, @emerald]) 
+    it '::show_only_true' do
+      
+      expect(Crystal.show_only_true).to eq([@larimar, @emerald]) 
     end
-
   end
 end
