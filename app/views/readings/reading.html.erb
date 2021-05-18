@@ -6,3 +6,4 @@
   <li><%= "People in attendance: #{@reading.attendees_num}" %></li>
   <li><%= "Major reading: #{@reading.major_reading}" %></li>
 </ul>
+<%= button_to "Update Reading", "/readings/#{@reading.id}/edit", :method => "get" %>

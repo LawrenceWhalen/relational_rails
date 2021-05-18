@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'the readings edit process' do
-  it 'displays the Tarot Deck Name' do
+  it 'has an edit button on the view page' do
     deck = TarotDeck.create!(
       name: 'Programs',
       number_made: 15,
@@ -18,13 +18,13 @@ RSpec.describe 'the readings edit process' do
 
     visit "/readings/#{reading_1.id}"
 
-    expect(page).to have_selector('Edit Reading')
+    expect(page).to have_selector("[value='Update Reading']")
 
-    click_button('Edit Reading')
+    click_button('Update Reading')
 
     expect(current_path).to eq("/readings/#{reading_1.id}/edit")
   end
-  it 'displays the Tarot Deck Name' do
+  it 'updates the reading' do
     deck = TarotDeck.create!(
       name: 'Programs',
       number_made: 15,
@@ -42,8 +42,6 @@ RSpec.describe 'the readings edit process' do
     visit "/readings/#{reading_1.id}/edit"
 
     expect(page).to_not have_content("Maji")
-
-    expect(page).to have_selector('Update Reading')
 
     fill_in('Cards Drawn (sepereated by commas):', with: 'Maji')
 
