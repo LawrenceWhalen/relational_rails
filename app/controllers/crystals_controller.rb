@@ -2,7 +2,7 @@
 
 class CrystalsController < ApplicationController
   def index
-    @crystals = Crystal.all
+    @crystals = Crystal.show_only_true
   end
 
   def show
