@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/readings/new', to: 'readings#new'
   get '/readings/:id', to: 'readings#reading'
   post '/readings', to: 'readings#create'
-  
+  get '/tarot_decks/:id/readings/new', to: 'readings#new'
   
   get '/crystal_sets', to: 'crystal_sets#index'
   get '/crystal_sets/new', to: 'crystal_sets#new'
