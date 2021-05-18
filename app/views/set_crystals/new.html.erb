@@ -1,3 +1,4 @@
+<div class="main">
 <%= form_with url: "/crystal_sets/#{@crystal_set.id}/crystals", method: :post, local: true do |form| %>
   <%= form.label :name, "Name" %>
   <%= form.text_field :name %>
@@ -9,3 +10,4 @@
   <%= form.text_field :description %>
   <%= form.submit "Create Crystal" %>
 <% end %>
+</div>

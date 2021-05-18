@@ -23,7 +23,7 @@ RSpec.describe 'crystals index' do
 
   it 'links to crystal sets index page' do
     visit "/crystals"
-    click_on "Back to Crystal Sets"
+    click_on "Crystal Sets"
 
     expect(current_path).to eq("/crystal_sets")
   end
