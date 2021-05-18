@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   
   get '/tarot_decks', to: 'tarot_decks#index'
   get '/tarot_decks/new', to: 'tarot_decks#new'
-  get '/tarot_decks/:id', to: 'tarot_decks#deck'
   post '/tarot_decks', to: 'tarot_decks#create'
+  get '/tarot_decks/:id/readings', to: 'tarot_decks#children'
+  get '/tarot_decks/:id', to: 'tarot_decks#deck'
+  patch '/tarot_decks/:id', to: 'tarot_decks#update'
+  get '/tarot_decks/:id/edit', to: 'tarot_decks#edit'
   get '/readings', to: 'readings#index'
   get '/readings/new', to: 'readings#new'
   get '/readings/:id', to: 'readings#reading'
   post '/readings', to: 'readings#create'
-  get '/tarot_decks/:id/readings', to: 'tarot_decks#children'
+  
   
   get '/crystal_sets', to: 'crystal_sets#index'
   get '/crystal_sets/new', to: 'crystal_sets#new'
