@@ -17,8 +17,6 @@ class SetCrystalsController < ApplicationController
     redirect_to "/crystal_sets/#{@crystal_set.id}/crystals"
   end
 
-   #add crystal set id - because it's not tied to any parent 
-
   private
     def crystal_params
       params.permit(:name, :price, :charged, :description)
