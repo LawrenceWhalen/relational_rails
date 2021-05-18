@@ -1,6 +1,6 @@
 class ReadingsController < ApplicationController
   def index
-    @readings = Reading.all
+    @readings = Reading.where(:major_reading => true)
   end
 
   def new
