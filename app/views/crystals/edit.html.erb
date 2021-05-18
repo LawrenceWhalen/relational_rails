@@ -1,3 +1,4 @@
+<div class="main">
 <%= form_with url: "/crystals/#{@crystal.id}", method: :patch, local: true do |form| %>
   <%= form.label :name, "Name" %>
   <%= form.text_field :name %>
@@ -9,3 +10,4 @@
   <%= form.text_field :description %>
   <%= form.submit "Update Crystal" %>
 <% end %>
+</div>
