@@ -1,0 +1,10 @@
+<div class="main">
+<h1>Crystals</h1>
+
+<% @crystals.each do |crystal| %>
+  <h2><%= link_to crystal.name, "/crystals/#{crystal.id}" %></h2>
+  <p>Price: $<%= crystal.price %></p>
+  <p>Charged:<%= crystal.charged %></p>
+  <p>Meaning:<%= crystal.description %></p>
+<% end %>
+</div>
