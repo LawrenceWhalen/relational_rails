@@ -5,7 +5,7 @@
       <%= button_to "Edit #{set.collection_name}", "/crystal_sets/#{set.id}/edit", method: :get %> 
       <p>Limited Edition: <%= set.limited_edition %></p>
       <p>Inventory: <%= set.inventory %></p>
+      <%= button_to "Delete", "/crystal_sets/#{set.id}", method: :delete %>
   <% end %>
   <%= link_to "New Crystal Set", "/crystal_sets/new" %>
-  <%= button_to "Delete" %>
 </div>
