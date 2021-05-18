@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   get '/crystals', to: 'crystals#index'
   get '/crystals/:id', to: 'crystals#show'
   get '/crystals/:id/edit', to: 'crystals#edit'
-
+  patch '/crystals/:id', to: 'crystals#update'
 end

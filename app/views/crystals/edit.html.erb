@@ -1,0 +1,11 @@
+<%= form_with url: "/crystals/#{@crystal.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %>
+  <%= form.label :price %>
+  <%= form.number_field :price, in: 1.0..1000.00, step: :any %>
+  <%= form.label :charged, "Charged?" %>
+  <%= form.check_box :charged, {}, checked_value = true, unchecked_value = false %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <%= form.submit "Update Crystal" %>
+<% end %>
