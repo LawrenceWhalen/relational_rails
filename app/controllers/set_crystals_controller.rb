@@ -3,7 +3,12 @@
 class SetCrystalsController < ApplicationController
   def index
     @crystal_set = CrystalSet.find(params[:id])
-    @crystals = @crystal_set.crystals 
+
+    if params[:alphabetical] == "true"
+      @crystals = @crystal_set.crystals.order_alphabetically
+    else
+      @crystals = @crystal_set.crystals
+    end
   end
 
   def new 
