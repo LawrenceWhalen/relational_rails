@@ -99,7 +99,7 @@ RSpec.describe 'the Tarot Deck children table' do
 
     expect(page).to have_selector("[value='Submit']")
   end
-  it 'only shows readings with more than the submitted views' do
+  it 'only shows readings with more than the submitted attendees' do
     visit "/tarot_decks/#{@deck_1.id}/readings"
 
     fill_in('Only show readings with at least', with: 16)

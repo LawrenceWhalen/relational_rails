@@ -12,4 +12,8 @@ class Reading < ApplicationRecord
   def self.major_readings
     where(major_reading: true)
   end
+
+  def self.attend(min)
+    where("attendees_num >= '#{min}'")
+  end
 end
