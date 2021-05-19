@@ -94,4 +94,21 @@ RSpec.describe 'the Tarot Deck children table' do
 
     expect(current_path).to eq("/readings/#{@reading_1.id}/edit")
   end
+  it 'has return threshhold button' do
+    visit "/tarot_decks/#{@deck_1.id}/readings"
+
+    expect(page).to have_selector("[value='Submit']")
+  end
+  it 'only shows readings with more than the submitted views' do
+    visit "/tarot_decks/#{@deck_1.id}/readings"
+
+    fill_in('Only show readings with at least', with: 16)
+
+    click_button('Submit')
+
+    expect(current_path).to eq("/tarot_decks/#{@deck_1.id}/readings")
+
+    expect(page).to_not have_content('Three Card')
+    expect(page).to have_content('Five Card')
+  end
 end
