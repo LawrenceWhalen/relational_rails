@@ -50,4 +50,26 @@ RSpec.describe 'the Tarot Deck index' do
     expect(page).to have_content(deck3.created_at)
     expect(created_first).to appear_before(created_second)
   end
+  it 'has buttons to edit the decks' do
+    deck = TarotDeck.create!(
+      name: 'Programs',
+      number_made: 15,
+      pre_owned: false,
+      )
+    deck2 = TarotDeck.create!(
+      name: 'Witches',
+      number_made: 1,
+      pre_owned: true,
+      )
+
+
+    visit "/tarot_decks"
+
+    expect(page).to have_selector("[value='Update Programs']")
+    expect(page).to have_selector("[value='Update Witches']")
+
+    click_button('Update Programs')
+
+    expect(current_path).to eq("/tarot_decks/#{deck.id}/edit")
+  end
 end
