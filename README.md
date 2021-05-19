@@ -5,7 +5,7 @@ In this pair project, we building a basic web app and exploring `one to many rel
 
 ## Database Design
 
-(https://github.com/LawrenceWhalen/relational_rails/blob/65afac4b28183a3facc6cbf4e443daa9a379385f/Screen%20Shot%202021-05-19%20at%201.48.06%20PM.png)
+![Schema](https://github.com/LawrenceWhalen/relational_rails/blob/65afac4b28183a3facc6cbf4e443daa9a379385f/Screen%20Shot%202021-05-19%20at%201.48.06%20PM.png)
 
 
 ## Learning Goals 
