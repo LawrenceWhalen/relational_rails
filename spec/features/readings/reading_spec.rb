@@ -19,7 +19,7 @@ RSpec.describe 'the Tarot Deck id page' do
       spread: 'Five Card',
       major_reading: false,
       cards_drawn: 'Fool Maji',
-      attendees_num: 18,
+      attendees_num: 18 ,
       interpretation: 'I will live'
     )
 

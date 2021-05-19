@@ -59,7 +59,20 @@
    top: -50px;
  }
 
- .table {
+ .relative {
+ padding: 10px;
+ position: relative;
+ margin: 10px;
+}
+.navitem {
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+} 
+
+.table {
    margin: 25px 0;
    font-family: 'Inter', sans-serif;
    font-size: 0.9em;
@@ -91,4 +104,3 @@
   width: 100%;
   margin-left: 15px;
  }
-

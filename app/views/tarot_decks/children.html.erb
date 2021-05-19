@@ -1,13 +1,26 @@
-<h1><%= "Readings using the #{@deck.name} deck:"%><%= button_to "Add New Reading", "/tarot_decks/#{@deck.id}/readings/new", :method => "get" %></h1><br><br>
+<h1 class="relative"><%= "Readings using the #{@deck.name} deck:"%><div class="navitem"><%= button_to "Add New Reading", "/tarot_decks/#{@deck.id}/readings/new", :method => "get" %></div>
+  <div class="navitem">
+  <%= form_with url: "/tarot_decks/#{@deck.id}/readings", :method => "get", local: true do |form| %>
+    <% form.hidden_field :alpha, :value => true %>
+    <%= form.submit 'Alphabatize' %>
+  <% end %></div></h1><br>
+  <%= form_with url: "/tarot_decks/#{@deck.id}/readings", :method => "get", local: true do |form| %>
+  <%= form.label :attendees, 'Only show readings with at least' %>
+  <%= form.number_field :attendees, in: 1..10, step: 1, :required => true %> attendees
+  <%= form.submit 'Submit' %>
+  <% end %>
+  <br><br>
 
 <div class="right top">
-  <% @readings.each do |reading| %>
-  <h3><%= "Reading number #{reading.id}: " %></h3>
+  <% @readings.each_with_index do |reading, index| %>
+    <h3><%= "Reading number #{reading.id}: " %></h3>
     <ul>
       <li><%= "Spread used: #{reading.spread}" %></li>
       <li><%= "Cards drawn: #{reading.cards_drawn}" %></li>
       <li><%= "Interpretation: #{reading.interpretation}" %></li>
       <li><%= "People in attendance: #{reading.attendees_num}" %></li>
       <li><%= "Major reading: #{reading.major_reading}" %></li>
+      <li id="<%= index %>"><%= button_to "Update Reading ##{reading.id}", "/readings/#{reading.id}/edit", :method => "get" %></li>
     </ul>
   <% end %>
+</div>

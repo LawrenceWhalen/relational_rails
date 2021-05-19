@@ -10,7 +10,7 @@ RSpec.describe 'updating a Tarot Deck' do
 
     visit "/tarot_decks/#{deck.id}"
 
-    page.should have_selector("[value='Update Deck']")
+    expect(page).to have_selector("[value='Update Deck']")
 
     click_button('Update Deck')
 

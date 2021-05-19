@@ -1,25 +1,32 @@
-# README
+# Relational Rails 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview 
+In this pair project, we building a basic web app and exploring `one to many relationship` using a real worl examples of `Tarot Decks -> Readings` and `Crystal Sets -> Crystals`. Referencing the [user stories](https://backend.turing.edu/module2/projects/relational_rails) provided to us, we've incorporated CRUD Functionality and Active Record to buid a usable site interface. 
 
-Things you may want to cover:
+## Database Design
 
-* Ruby version
- - ruby version 2.7.2
+![Schema](https://github.com/LawrenceWhalen/relational_rails/blob/65afac4b28183a3facc6cbf4e443daa9a379385f/Screen%20Shot%202021-05-19%20at%201.48.06%20PM.png)
 
-* System dependencies
 
-* Configuration
+## Learning Goals 
+- Design a one to many relationship using a [schema designer](https://app.dbdesigner.net/designer/schema/418829)
+- Write migrations to create tables with columns of varying data types and foreign keys.
+- Use Rails to create web pages that allow users to CRUD resources
+- Create instance and class methods on a Rails model that use ActiveRecord methods and helpers
+- Write model and feature tests that fully cover data logic and user behavior
+- "Handroll" all routes(no use of `resources` syntax)
 
-* Database creation
+## Requirements 
+- must use Rails 5.2.4.x
+- must use Ruby version 2.7.2 
+- must use PostgreSQL
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Additional Gems
+- [pry](https://github.com/pry/pry)
+- [rspec](https://github.com/rspec/rspec)
+- [rspec-rails](https://github.com/rspec/rspec-rails)
+- [capybara](https://github.com/teamcapybara/capybara)
+- [launchy](https://github.com/copiousfreetime/launchy) 
+- [simplecov](https://github.com/simplecov-ruby/simplecov)
+- [orderly](https://github.com/jmondo/orderly)
+- [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) 
