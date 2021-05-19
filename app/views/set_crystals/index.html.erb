@@ -1,11 +1,13 @@
 <div class="main">
   <h1><%= @crystal_set.collection_name %></h1>
-  <%= link_to "Sort Alphabetically", "/crystal_sets/#{@crystal_set.id}/crystals/?alphabetical=true" %>
-  <%= form_with url: "/crystal_sets/#{@crystal_set.id}/crystals/?pricier_than=#{params[:crystals_by_price]}", method: :get, local: true do |form| %>
-    <%= form.label :crystals_by_price, "Show Crystals That Cost >" %>
-    <%= form.number_field :crystals_by_price, in: 0..10000000, step: :any %>
-    <%= form.submit "Show Me The Crystals!" %>
-  <% end %>
+  <div class="form">
+    <p><%= link_to "Sort Alphabetically", "/crystal_sets/#{@crystal_set.id}/crystals/?alphabetical=true" %></p>
+    <%= form_with url: "/crystal_sets/#{@crystal_set.id}/crystals/?pricier_than=#{params[:crystals_by_price]}", method: :get, local: true do |form| %>
+      <%= form.label :crystals_by_price, "Show Crystals That Cost >" %>
+      <%= form.number_field :crystals_by_price, in: 0..10000000, step: :any %>
+      <%= form.submit "Show Me The Crystals!" %>
+    <% end %>
+  </div>
 
     <table class="table">
     <thead>
@@ -34,6 +36,5 @@
       <% end %>
     </tbody>
   </table>
-  
   <%= button_to "Add Crystal", "/crystal_sets/#{@crystal_set.id}/crystals/new", method: :get %>
 </div>

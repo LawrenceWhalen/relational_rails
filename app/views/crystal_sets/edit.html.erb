@@ -1,6 +1,7 @@
 <div class="main">
-  <h1>Edit <%= @crystal_set.collection_name %></h1>
+
   <div class="form">
+    <h1>Edit <%= @crystal_set.collection_name %></h1>
     <%= form_with url: "/crystal_sets/#{@crystal_set.id}", method: :patch, local: true do |form| %>
       <p><%= form.label :collection_name, "Collection Name" %></p>
       <p><%= form.text_field :collection_name, value: "#{@crystal_set.collection_name}" %></p>
