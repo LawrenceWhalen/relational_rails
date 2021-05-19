@@ -12,14 +12,13 @@ RSpec.describe 'crystal set index' do
 
     expect(page).to have_content(@set_1.collection_name)
     expect(page).to have_content(@set_1.limited_edition)
-    expect(page).to have_content(@set_1.created_at.strftime('%m/%d/%y'))
+    expect(page).to have_content(@set_1.created_at.strftime('%m/%d/%Y'))
   end
 
   it 'shows crystal sets in order of date created' do
     visit '/crystal_sets'
-
-    full_set_name_1 = "Intuitively Chosen Raw Crystals Collection created at: #{@set_2.created_at.strftime('%m/%d/%y')}"
-    full_set_name_2 = "Raw Crystal Chunks - 28pc Collection created at: #{@set_1.created_at.strftime('%m/%d/%y')}"
+    full_set_name_1 = "Intuitively Chosen Raw Crystals"
+    full_set_name_2 = "Raw Crystal Chunks - 28pc"
 
     expect(full_set_name_1).to appear_before(full_set_name_2, only_text: true)
   end
@@ -50,7 +49,7 @@ RSpec.describe 'crystal set index' do
     expect(page).to have_content("Intuitively Chosen Raw Crystals")
     expect(page).to have_content("Raw Crystal Chunks - 28pc")
 
-    within first(".set") do
+    within first(".row") do
       click_button 'Delete'
     end
 

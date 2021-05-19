@@ -12,6 +12,6 @@ class CrystalSet < ApplicationRecord
   end
 
   def shows_crystals_pricier_than(price)
-    crystals.where("price > #{price}")
+    crystals.where("price > ?", price)
   end
 end

@@ -1,13 +1,24 @@
 <div class="main">
-  <%= form_with url: "/crystals/#{@crystal.id}", method: :patch, local: true do |form| %>
-    <%= form.label :name, "Name" %>
-    <%= form.text_field :name, value: "#{@crystal.name}" %>
-    <%= form.label :price %>
-    <%= form.number_field :price, in: 1.0..1000.00, step: :any %>
-    <%= form.label :charged, "Charged?" %>
-    <%= form.check_box :charged, {}, checked_value = true, unchecked_value = false %>
-    <%= form.label :description %>
-    <%= form.text_area :description, value: "#{@crystal.description}" %>
-    <%= form.submit "Update Crystal" %>
-  <% end %>
+  <div class="form">
+    <h1>Edit <%= @crystal.name %></h1>
+    <%= form_with url: "/crystals/#{@crystal.id}", method: :patch, local: true do |form| %>
+      <p>
+        <%= form.label :name, "Name" %>
+        <%= form.text_field :name, value: "#{@crystal.name}" %>
+      </p>
+      <p>
+        <%= form.label :price %>
+        <%= form.number_field :price, in: 1.0..1000.00, step: :any %>
+      </p>
+      <p>
+        <%= form.label :charged, "Charged?" %>
+        <%= form.check_box :charged, {}, checked_value = true, unchecked_value = false %>
+      </p>
+      <p>
+        <%= form.label :description %>
+        <%= form.text_area :description, value: "#{@crystal.description}" %>
+      </p>
+      <p><%= form.submit "Update Crystal" %></p>
+    <% end %>
+  </div>
 </div>

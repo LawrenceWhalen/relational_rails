@@ -1,13 +1,19 @@
 <div class="main">
-<h1><%= @crystal_set.collection_name %></h1>
 
-<%= form_with url: "/crystal_sets/#{@crystal_set.id}", method: :patch, local: true do |form| %>
-  <%= form.label :collection_name, "Collection Name" %>
-  <%= form.text_field :collection_name, value: "#{@crystal_set.collection_name}" %> 
-  <%= form.label :limited_edition, "Limited Edition?" %>
-  <%= form.check_box :limited_edition, {}, checked_value = true, unchecked_value = false %>
-  <%= form.label :inventory %>
-  <%= form.number_field :inventory, in: 0..1000, step: 1 %>
-  <%= form.submit "Update Crystal Set" %>
-<% end %> 
+  <div class="form">
+    <h1>Edit <%= @crystal_set.collection_name %></h1>
+    <%= form_with url: "/crystal_sets/#{@crystal_set.id}", method: :patch, local: true do |form| %>
+      <p><%= form.label :collection_name, "Collection Name" %></p>
+      <p><%= form.text_field :collection_name, value: "#{@crystal_set.collection_name}" %></p>
+      <p>
+        <%= form.label :limited_edition, "Limited Edition?" %>
+        <%= form.check_box :limited_edition, {}, checked_value = true, unchecked_value = false %>
+      </p>
+      <p>
+        <%= form.label :inventory %>
+        <%= form.number_field :inventory, in: 0..1000, step: 1 %>
+      </p>
+      <p><%= form.submit "Update Crystal Set" %></p>
+    <% end %>
+  </div>
 </div>
