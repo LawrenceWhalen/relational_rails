@@ -4,4 +4,5 @@
   <p>Holds <%= link_to @crystal_set.crystal_count, "/crystal_sets/#{@crystal_set.id}/crystals" %> Crystals</p>
   <p>Limited Edition:<%= @crystal_set.limited_edition %></p>
   <p>Inventory: <%= @crystal_set.inventory %></p>
+  <%= button_to "Delete", "/crystal_sets/#{@crystal_set.id}", method: :delete %>
 </div>

@@ -20,6 +20,13 @@ class CrystalsController < ApplicationController
     redirect_to "/crystals/#{crystal.id}"
   end
 
+  def destroy
+    crystal = Crystal.find(params[:id])
+    crystal.destroy 
+
+    redirect_to '/crystals'
+  end
+
   private
     def crystal_params
       params.permit(:name, :price, :charged, :description)
