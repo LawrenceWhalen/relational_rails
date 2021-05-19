@@ -5,6 +5,7 @@
   <ul>
     <li>Added to system on: <%= deck[:created_at] %></li>
     <li><%= button_to "Update #{deck.name}", "/tarot_decks/#{deck.id}/edit", :method => "get" %></li>
+    <li><%= button_to "Delete #{deck.name}", "/tarot_decks/#{deck.id}", :method => "delete" %></li>
   </ul>
 <% end %>
-</div><br>
+</div>
