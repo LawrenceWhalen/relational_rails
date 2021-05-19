@@ -4,7 +4,7 @@
 In this pair project, we building a basic web app and exploring `one to many relationship` using a real worl examples of `Tarot Decks -> Readings` and `Crystal Sets -> Crystals`. Referencing the [user stories](https://backend.turing.edu/module2/projects/relational_rails) provided to us, we've incorporated CRUD Functionality and Active Record to buid a usable site interface. 
 
 ## Learning Goals 
-- Design a one to many relationship using a schema designer
+- Design a one to many relationship using a [schema designer](https://app.dbdesigner.net/designer/schema/418829)
 - Write migrations to create tables with columns of varying data types and foreign keys.
 - Use Rails to create web pages that allow users to CRUD resources
 - Create instance and class methods on a Rails model that use ActiveRecord methods and helpers
