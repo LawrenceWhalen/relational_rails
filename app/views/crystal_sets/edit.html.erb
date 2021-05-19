@@ -1,3 +1,4 @@
+<div class="main">
 <h1><%= @crystal_set.collection_name %></h1>
 
 <%= form_with url: "/crystal_sets/#{@crystal_set.id}", method: :patch, local: true do |form| %>
@@ -9,3 +10,4 @@
   <%= form.number_field :inventory, in: 0..1000, step: 1 %>
   <%= form.submit "Update Crystal Set" %>
 <% end %> 
+</div>

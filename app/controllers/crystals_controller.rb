@@ -2,7 +2,7 @@
 
 class CrystalsController < ApplicationController
   def index
-    @crystals = Crystal.all
+    @crystals = Crystal.show_only_true
   end
 
   def show
@@ -18,6 +18,13 @@ class CrystalsController < ApplicationController
     crystal.update(crystal_params)
 
     redirect_to "/crystals/#{crystal.id}"
+  end
+
+  def destroy
+    crystal = Crystal.find(params[:id])
+    crystal.destroy 
+
+    redirect_to '/crystals'
   end
 
   private

@@ -1,6 +1,10 @@
-<a href="/crystal_sets">Back to Crystal Sets</a>
- <h1><%= @crystal_set.collection_name %></h2>
-  <%= button_to "Edit #{@crystal_set.collection_name}", "/crystal_sets/#{@crystal_set.id}/edit", method: :get %> 
-  <p>Holds <%= link_to @crystal_set.crystal_count, "/crystal_sets/#{@crystal_set.id}/crystals" %> Crystals</p>
-  <p>Limited Edition:<%= @crystal_set.limited_edition %></p>
-  <p>Inventory: <%= @crystal_set.inventory %></p>
+<div class="main">
+  <div class="single_set">
+    <h1><%= @crystal_set.collection_name %></h2>
+    <%= button_to "Edit #{@crystal_set.collection_name}", "/crystal_sets/#{@crystal_set.id}/edit", method: :get %>
+    <p>Holds <%= link_to @crystal_set.crystal_count, "/crystal_sets/#{@crystal_set.id}/crystals" %> Crystals</p>
+    <p>Limited Edition:<%= @crystal_set.limited_edition %></p>
+    <p>Inventory: <%= @crystal_set.inventory %></p>
+    <%= button_to "Delete", "/crystal_sets/#{@crystal_set.id}", method: :delete %>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 class CrystalSetsController < ApplicationController
   def index
-    @crystal_sets = CrystalSet.all.order(:created_at).reverse_order 
+    @crystal_sets = CrystalSet.order_by_most_recently_created
   end
 
   def show
@@ -25,6 +25,13 @@ class CrystalSetsController < ApplicationController
   def update
     crystal_set = CrystalSet.find(params[:id])
     crystal_set.update(crystal_set_params)
+
+    redirect_to '/crystal_sets'
+  end
+
+  def destroy
+    crystal_set = CrystalSet.find(params[:id])
+    crystal_set.destroy 
 
     redirect_to '/crystal_sets'
   end

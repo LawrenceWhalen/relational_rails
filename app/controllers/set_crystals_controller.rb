@@ -3,7 +3,14 @@
 class SetCrystalsController < ApplicationController
   def index
     @crystal_set = CrystalSet.find(params[:id])
-    @crystals = @crystal_set.crystals 
+
+    if params[:alphabetical] == "true"
+      @crystals = @crystal_set.crystals.order_alphabetically
+    elsif params[:crystals_by_price] != "" && !params[:crystals_by_price].nil?
+      @crystals = @crystal_set.shows_crystals_pricier_than(params[:crystals_by_price]) 
+    else
+      @crystals = @crystal_set.crystals
+    end
   end
 
   def new 
@@ -13,6 +20,13 @@ class SetCrystalsController < ApplicationController
   def create
     @crystal_set = CrystalSet.find(params[:id])
     @crystal_set.crystals.create(crystal_params)
+
+    redirect_to "/crystal_sets/#{@crystal_set.id}/crystals"
+  end
+
+  def destroy 
+    @crystal_set = CrystalSet.find(params[:id])
+    @crystal_set.crystals.destroy 
 
     redirect_to "/crystal_sets/#{@crystal_set.id}/crystals"
   end

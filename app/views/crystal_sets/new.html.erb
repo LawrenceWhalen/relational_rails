@@ -1,4 +1,4 @@
-<a href="/crystal_sets">Back to Crystal Sets</a>
+<div class="main">
 <%= form_with url: '/crystal_sets', method: :post, local: true do |form| %>
   <%= form.label :collection_name, "Collection Name" %>
   <%= form.text_field :collection_name %>
@@ -8,4 +8,4 @@
   <%= form.number_field :inventory, in: 0..1000, step: 1 %>
   <%= form.submit "Create Crystal Set" %>
 <% end %>
-
+</div>
