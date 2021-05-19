@@ -30,6 +30,12 @@ RSpec.describe 'crystal set index' do
     expect(page).to have_link("All Crystals", href: '/crystals')
   end
 
+  it 'links to crystals index page' do
+    visit '/crystal_sets'
+    
+    expect(page).to have_link("All Crystals", href: '/crystals')
+  end
+
   it 'links to each sets show page' do
     visit '/crystal_sets'
 
