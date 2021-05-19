@@ -25,10 +25,10 @@ RSpec.describe Reading, type: :model do
   end
   it 'has a default order' do
 
-    expect(Reading.alphabatize).to eq([@reading_2, @reading_1])
+    expect(Reading.Alphabetize).to eq([@reading_2, @reading_1])
 
   end
-  it 'has an alphabatized order' do
+  it 'has an Alphabetized order' do
 
     expect(Reading.default).to eq([@reading_1, @reading_2])
 

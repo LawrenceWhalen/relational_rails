@@ -55,13 +55,13 @@ RSpec.describe 'the Tarot Deck children table' do
   it 'has a button to arrange readings alphabetically' do
     visit "/tarot_decks/#{@deck_1.id}/readings"
 
-    expect(page).to have_selector("[value='Alphabatize']")
+    expect(page).to have_selector("[value='Alphabetize']")
 
-    click_button('Alphabatize')
+    click_button('Alphabetize')
 
     expect(current_path).to eq("/tarot_decks/#{@deck_1.id}/readings")
   end
-  it 'Alphabatizes all the children' do
+  it 'Alphabetizes all the children' do
     @reading_4 = @deck_1.readings.create(
       spread: 'ZZZ',
       major_reading: false,
@@ -78,8 +78,8 @@ RSpec.describe 'the Tarot Deck children table' do
     )
     visit "/tarot_decks/#{@deck_1.id}/readings"
 
-    click_button('Alphabatize')
-
+    click_button('Alphabetize')
+    
     expect('AAA').to appear_before('ZZZ')
   end
   it 'has an edit button on the view page' do

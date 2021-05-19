@@ -1,7 +1,7 @@
 class Reading < ApplicationRecord
   belongs_to :tarot_deck
 
-  def self.alphabatize
+  def self.Alphabetize
     order(Arel.sql("lower(spread)"))
   end
 
