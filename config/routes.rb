@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/tarot_decks/:id/readings/new', to: 'readings#new'
   patch '/readings/:id', to: 'readings#update'
   get '/readings/:id/edit', to: 'readings#edit'
+  delete '/readings/:id', to: 'readings#destroy'
 
   get '/crystal_sets', to: 'crystal_sets#index'
   get '/crystal_sets/new', to: 'crystal_sets#new'

@@ -38,4 +38,10 @@ class ReadingsController < ApplicationController
     reading.update(interpretation: params[:interpretation])
     redirect_to "/readings/#{reading.id}"
   end
+
+  def destroy
+    reading = Reading.find(params[:id])
+    reading.destroy
+    redirect_to '/readings'
+  end
 end

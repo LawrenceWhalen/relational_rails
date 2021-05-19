@@ -56,7 +56,7 @@ RSpec.describe 'the Reading deletion process' do
 
     expect(Reading.last.id).to eq(reading_2.id)
 
-    visit "/readings/#{deck_2.id}"
+    visit "/readings/#{reading_2.id}"
 
     click_button('Delete Reading')
 
