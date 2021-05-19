@@ -30,16 +30,33 @@ RSpec.describe 'crystal set index' do
     expect(page).to have_link("All Crystals", href: '/crystals')
   end
 
-  it 'links to crystals index page' do
-    visit '/crystal_sets'
-    
-    expect(page).to have_link("All Crystals", href: '/crystals')
-  end
-
   it 'links to each sets show page' do
     visit '/crystal_sets'
 
     expect(page).to have_link("#{@set_1.collection_name}", href: "/crystal_sets/#{@set_1.id}")
     expect(page).to have_link("#{@set_2.collection_name}", href: "/crystal_sets/#{@set_2.id}")
+  end
+
+  it 'links to the edit page' do
+    visit "/crystal_sets/#{@set_1.id}"
+
+    click_button "Edit #{@set_1.collection_name}"
+
+    expect(current_path).to eq("/crystal_sets/#{@set_1.id}/edit")
+  end
+
+  it 'can delete the crystal set from the index page' do
+    visit '/crystal_sets'
+
+    expect(page).to have_content("Intuitively Chosen Raw Crystals")
+    expect(page).to have_content("Raw Crystal Chunks - 28pc")
+
+    within first(".set") do
+      click_button 'Delete'
+    end
+
+    expect(page).to_not have_content("Intuitively Chosen Raw Crystals")
+    expect(page).to have_content("Raw Crystal Chunks - 28pc")
+    expect(current_path).to eq('/crystal_sets')
   end
 end
