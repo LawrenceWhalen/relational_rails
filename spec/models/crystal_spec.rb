@@ -17,8 +17,8 @@ RSpec.describe Crystal do
     end
 
     it '::orders_aphabetically' do
-
-     expect(Crystal.order_alphabetically).to eq([@amethyst, @emerald, @larimar]) 
+      
+      expect(Crystal.order_alphabetically).to eq([@amethyst, @emerald, @larimar]) 
     end
   end
 end
