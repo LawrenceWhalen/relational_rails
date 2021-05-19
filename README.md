@@ -5,7 +5,7 @@ In this pair project, we building a basic web app and exploring `one to many rel
 
 ## Database Design
 
-![Schema](Screen Shot 2021-05-19 at 1.48.06 PM.png)
+[Schema](Screen Shot 2021-05-19 at 1.48.06 PM.png)
 
 
 ## Learning Goals 
