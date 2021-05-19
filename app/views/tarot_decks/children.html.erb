@@ -6,7 +6,7 @@
   <% end %></div></h1><br><br>
 
 <div class="right top">
-  <% @readings.each do |reading| %>
+  <% @readings.each_with_index do |reading, index| %>
   <h3><%= "Reading number #{reading.id}: " %></h3>
     <ul>
       <li><%= "Spread used: #{reading.spread}" %></li>
@@ -14,5 +14,6 @@
       <li><%= "Interpretation: #{reading.interpretation}" %></li>
       <li><%= "People in attendance: #{reading.attendees_num}" %></li>
       <li><%= "Major reading: #{reading.major_reading}" %></li>
+      <li id="<%= index %>"><%= button_to "Update Reading ##{reading.id}", "/readings/#{reading.id}/edit", :method => "get" %></li>
     </ul>
   <% end %>

@@ -23,7 +23,7 @@ RSpec.describe 'the Reading index' do
       interpretation: 'Looks good'
     )
 
-    visit "/readings"
+    visit("/readings")
 
     expect(page).to have_content(@reading_1.spread)
     expect(page).to have_content(@reading_1.major_reading)
@@ -58,7 +58,7 @@ RSpec.describe 'the Reading index' do
       interpretation: 'Looks good'
     )
 
-    visit "/readings"
+    visit("/readings")
 
     expect(page).to have_content(@reading_1.spread)
     expect(page).to have_content(@reading_1.major_reading)
@@ -93,12 +93,14 @@ RSpec.describe 'the Reading index' do
       interpretation: 'we will live'
     )
 
-    visit "/readings"
+    visit("/readings")
 
-    expect(page).to have_selector("[value='Update Reading ##{reading_1.id}']")
+    expect(page).to have_selector("[value='Update Reading ##{reading_2.id}']")
 
-    click_button('Update Reading')
+    within("li#1") do
+      click_button('Update Reading')
+    end
 
-    expect(current_path).to eq("/readings/#{reading_1.id}/edit")
+    expect(current_path).to eq("/readings/#{reading_2.id}/edit")
   end
 end

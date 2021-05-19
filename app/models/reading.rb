@@ -6,7 +6,7 @@ class Reading < ApplicationRecord
   end
 
   def self.default
-    Reading.where(tarot_deck_id: params[:id])
+    order(:created_at)
   end
 
   def self.major_readings

@@ -37,7 +37,6 @@ RSpec.describe 'the Tarot Deck children table' do
       interpretation: 'This is not a Tarot Deck'
     )
   end
-
   it 'displays the readings associated with that deck' do
     visit "/tarot_decks/#{@deck_1.id}/readings"
 
@@ -84,33 +83,15 @@ RSpec.describe 'the Tarot Deck children table' do
     expect('AAA').to appear_before('ZZZ')
   end
   it 'has an edit button on the view page' do
-    deck = TarotDeck.create!(
-      name: 'Programs',
-      number_made: 15,
-      pre_owned: false,
-    )
-
-    reading_1 = deck.readings.create(
-      spread: 'Three Card',
-      major_reading: true,
-      cards_drawn: 'Empress Fool',
-      attendees_num: 6,
-      interpretation: 'I am doomed'
-    )
-    reading_2 = deck.readings.create(
-      spread: 'Hello',
-      major_reading: true,
-      cards_drawn: 'Maji',
-      attendees_num: 1,
-      interpretation: 'we will live'
-    )
 
     visit "/tarot_decks/#{@deck_1.id}/readings"
 
-    expect(page).to have_selector("[value='Update Reading ##{reading_1.id}']")
+    expect(page).to have_selector("[value='Update Reading ##{@reading_1.id}']")
 
-    click_button('Update Reading')
+    within("li#0") do
+      click_button('Update Reading')
+    end
 
-    expect(current_path).to eq("/readings/#{reading_1.id}/edit")
+    expect(current_path).to eq("/readings/#{@reading_1.id}/edit")
   end
 end

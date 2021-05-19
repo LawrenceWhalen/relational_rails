@@ -1,13 +1,14 @@
 <h1>Readings:</h1>
 
 <div class="right">
-  <% @readings.each do |reading| %>
+  <% @readings.each_with_index do |reading, index| %>
   <h2><%= "#{TarotDeck.find(reading.tarot_deck_id).name} reading:"%> <a href="/readings/<%="#{reading.id}"%>"> "<%="#{reading.spread}"%>"</a></h2>
   <ul>
     <li><%= "Cards drawn: #{reading.cards_drawn}" %></li>
     <li><%= "Interpretation: #{reading.interpretation}" %></li>
     <li><%= "People in attendance: #{reading.attendees_num}" %></li>
     <li><%= "Major reading: #{reading.major_reading}" %></li>
+    <li id="<%= index %>"><%= button_to "Update Reading ##{reading.id}", "/readings/#{reading.id}/edit", :method => "get" %></li>
   </ul>
   <% end %>
 </div>

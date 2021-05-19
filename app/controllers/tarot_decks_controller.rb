@@ -25,7 +25,7 @@ class TarotDecksController < ApplicationController
   def children
     @deck = TarotDeck.find(params[:id])
     if params[:commit] != 'Alphabatize'
-      @readings = @deck.readings
+      @readings = @deck.readings.default
     else
       @readings = @deck.readings.alphabatize
     end
