@@ -8,8 +8,10 @@
     <li><%= "Interpretation: #{reading.interpretation}" %></li>
     <li><%= "People in attendance: #{reading.attendees_num}" %></li>
     <li><%= "Major reading: #{reading.major_reading}" %></li>
-    <ul>
-      <li id="<%= index %>"><%= button_to "Update Reading ##{reading.id}", "/readings/#{reading.id}/edit", :method => "get" %></li>
+    <ul class="relative">
+      <li id= "<%= index %>" ><div class="navitem"><%= button_to "Update Reading ##{reading.id}", "/readings/#{reading.id}/edit", :method => "get" %></div>
+      <div class="navitem"><%= button_to "Delete Reading ##{reading.id}", "/readings/#{reading.id}", :method => "delete" %></div>
+      </li>
     </ul>
   </ul>
   <% end %>
