@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Crystal Set creation' do
-  it 'can create a new crystal set' do
+  it 'can create new crystal set' do
     visit '/crystal_sets/new'
 
     fill_in "Collection Name", with: "Starter Crystal Set with 5 Stones"

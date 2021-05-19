@@ -30,7 +30,6 @@ RSpec.describe 'the crystal set show page' do
   
   it 'links to the edit page' do
     visit "/crystal_sets/#{@set_1.id}"
-
     click_button "Edit #{@set_1.collection_name}"
 
     expect(current_path).to eq("/crystal_sets/#{@set_1.id}/edit")
@@ -38,7 +37,7 @@ RSpec.describe 'the crystal set show page' do
 
   it 'links to index page of all crystals in crystal set' do
     visit "/crystal_sets/#{@set_1.id}"
-    
+
     expect(page).to have_link("#{@set_1.crystal_count}", href: "/crystal_sets/#{@set_1.id}/crystals")
   end
 

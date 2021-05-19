@@ -7,7 +7,7 @@ RSpec.describe 'crystal set index' do
     @set_2 = CrystalSet.create!(collection_name: "Intuitively Chosen Raw Crystals", limited_edition: true, inventory: 250)
   end
 
-  it 'can see all crystal sets and their creation date' do 
+  it 'can see all crystal sets and their creation dates' do 
     visit '/crystal_sets'
 
     expect(page).to have_content(@set_1.collection_name)
