@@ -10,6 +10,7 @@ class CrystalSetsController < ApplicationController
   end
 
   def new
+
   end
 
   def create

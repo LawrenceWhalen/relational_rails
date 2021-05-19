@@ -1,11 +1,21 @@
 <div class="main">
-<%= form_with url: '/crystal_sets', method: :post, local: true do |form| %>
-  <%= form.label :collection_name, "Collection Name" %>
-  <%= form.text_field :collection_name %>
-  <%= form.label :limited_edition, "Limited Edition?" %>
-  <%= form.check_box :limited_edition, {}, checked_value = true, unchecked_value = false %>
-  <%= form.label :inventory %>
-  <%= form.number_field :inventory, in: 0..1000, step: 1 %>
-  <%= form.submit "Create Crystal Set" %>
-<% end %>
+  <div class="form">
+  <h1> Create New Crystal Set! </h1>
+  <%= form_with url: '/crystal_sets', method: :post, local: true do |form| %>
+      <p>
+        <%= form.label :collection_name, "Collection Name" %>
+        <%= form.text_field :collection_name %>
+      </p>
+      <o>
+        <%= form.label :limited_edition, "Limited Edition?" %>
+        <%= hidden_field_tag  :limited_edition, "false" %>
+        <%= form.check_box :limited_edition, {}, checked_value = true, unchecked_value = false %>
+      </p>
+      <p>
+        <%= form.label :inventory %>
+        <%= form.number_field :inventory, in: 0..1000, step: 1 %>
+      </p>
+      <%= form.submit "Create Crystal Set" %>
+    <% end %>
+  </div>
 </div>

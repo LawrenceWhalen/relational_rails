@@ -7,6 +7,7 @@
       <p><%= form.text_field :collection_name, value: "#{@crystal_set.collection_name}" %></p>
       <p>
         <%= form.label :limited_edition, "Limited Edition?" %>
+        <%= hidden_field_tag  :charged, "false" %>
         <%= form.check_box :limited_edition, {}, checked_value = true, unchecked_value = false %>
       </p>
       <p>

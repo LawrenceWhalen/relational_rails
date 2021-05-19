@@ -12,6 +12,7 @@
       </p>
       <p>
         <%= form.label :charged, "Charged?" %>
+        <%= hidden_field_tag  :charged, "false" %>
         <%= form.check_box :charged, {}, checked_value = true, unchecked_value = false %>
       </p>
       <p>
