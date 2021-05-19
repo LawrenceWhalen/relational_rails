@@ -1,7 +1,7 @@
 # Relational Rails 
 
 ## Overview 
-In this pair project, we building a basic web app and exploring `one to many relationship` using a real worl examples of `Tarot Decks -> Readings` and `Crystal Sets -> Crystals`. Referencing the user stories provided to us, we've incorporated CRUD Functionality and Active Record to buid a usable site interface. 
+In this pair project, we building a basic web app and exploring `one to many relationship` using a real worl examples of `Tarot Decks -> Readings` and `Crystal Sets -> Crystals`. Referencing the [user stories](https://backend.turing.edu/module2/projects/relational_rails) provided to us, we've incorporated CRUD Functionality and Active Record to buid a usable site interface. 
 
 ## Learning Goals 
 - Design a one to many relationship using a schema designer
