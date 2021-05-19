@@ -1,6 +1,6 @@
 <div class="main">
   <h1><%= @crystal.name %></h1>
-  <%= button_to "Edit #{@crystal.name}", "/crystals/#{@crystal.id}/edit", method: :get %> 
+  <%= button_to "Edit #{@crystal.name}", "/crystals/#{@crystal.id}/edit", method: :get %>
   <p><%= link_to @crystal.crystal_set.collection_name, "/crystal_sets/#{@crystal.crystal_set.id}" %></p>
   <p><%= @crystal.price %></p>
   <p><%= @crystal.charged %></p>
