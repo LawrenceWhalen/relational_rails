@@ -1,5 +1,11 @@
 <div class="main">
   <%= link_to "Sort Alphabetically", "/crystal_sets/#{@crystal_set.id}/crystals/?alphabetical=true" %>
+  <%= form_with url: "/crystal_sets/#{@crystal_set.id}/crystals/?pricier_than=#{params[:crystals_by_price]}", method: :get, local: true do |form| %>
+    <%= form.label :crystals_by_price, "Show Crystals That Cost >" %>
+    <%= form.number_field :crystals_by_price, in: 0..10000000, step: :any%>
+    <%= form.submit "Show Me The Crystals!" %>
+  <% end %>
+
   <h1><%= @crystal_set.collection_name %> Collection </h1>
   <% @crystals.each do |crystal| %>
     <h2><%= link_to crystal.name, "/crystals/#{crystal.id}" %></h2>
