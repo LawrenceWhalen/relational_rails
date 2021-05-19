@@ -45,7 +45,7 @@ RSpec.describe 'crystal set index' do
     expect(current_path).to eq("/crystal_sets/#{@set_1.id}/edit")
   end
 
-  it 'can delete the crystal set from the index page' do
+  it 'can delete crystal set from index page' do
     visit '/crystal_sets'
 
     expect(page).to have_content("Intuitively Chosen Raw Crystals")
