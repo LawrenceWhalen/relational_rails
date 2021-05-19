@@ -2,7 +2,7 @@ class Reading < ApplicationRecord
   belongs_to :tarot_deck
 
   def self.alphabatize
-    order(:spread)
+    order(Arel.sql("lower(spread)"))
   end
 
   def self.default
@@ -14,6 +14,6 @@ class Reading < ApplicationRecord
   end
 
   def self.attend(min)
-    where("attendees_num >= '#{min}'")
+    where('attendees_num >= ?', "#{min}")
   end
 end
