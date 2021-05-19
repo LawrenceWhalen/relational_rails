@@ -58,3 +58,16 @@
  .right.top {
    top: -50px;
  }
+
+ .relative {
+ padding: 10px;
+ position: relative;
+ margin: 10px;
+}
+.navitem {
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}

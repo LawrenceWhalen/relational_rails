@@ -1,0 +1,18 @@
+<h2><%= "Update reading:" %></h2>
+<%= form_with url: "/readings/#{@reading.id}", method: :patch, local: true do |form| %>
+  <%= form.label :spread, 'Spread Used:' %>
+  <%= form.select :spread, options_for_select([['Three Card'],
+                                                          ['Five Card Cross'],
+                                                          ['Celtic Cross'],
+                                                          ['Ten Card Love'],
+                                                          ['Horseshoe']]), value: @reading.spread %><br><br>
+  <%= form.label :major_reading, 'Was this a major reading?' %>
+  <%= form.check_box :major_reading, { value: @reading.major_reading }, checked_value = true, unchecked_value = false %><br><br>
+  <%= form.label :cards_drawn, 'Cards Drawn (sepereated by commas):' %><br>
+  <%= form.text_area :cards_drawn, cols: 30, rows: 5, value: @reading.cards_drawn, :required => true %><br><br>
+  <%= form.label :attendees_num, 'People in attendance:' %>
+  <%= form.number_field :attendees_num, in: 1..10, step: 1, value: @reading.attendees_num, :required => true %><br><br>
+  <%= form.label :interpretation, 'Interpretation:' %><br>
+  <%= form.text_area :interpretation, cols: 30, rows: 2, value: @reading.interpretation, :required => true %><br><br>
+  <%= form.submit "Update Reading" %>
+<% end %>

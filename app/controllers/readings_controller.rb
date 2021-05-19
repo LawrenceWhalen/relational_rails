@@ -1,6 +1,6 @@
 class ReadingsController < ApplicationController
   def index
-    @readings = Reading.all
+    @readings = Reading.major_readings
   end
 
   def new
@@ -23,5 +23,25 @@ class ReadingsController < ApplicationController
     reading.save
 
     redirect_to "/tarot_decks/#{reading.tarot_deck_id}/readings"
+  end
+
+  def edit
+    @reading = Reading.find(params[:id])
+  end
+
+  def update
+    reading = Reading.find(params[:id])
+    reading.update(spread: params[:spread])
+    reading.update(cards_drawn: params[:cards_drawn].split(',').to_s)
+    reading.update(major_reading: params[:major_reading])
+    reading.update(attendees_num: params[:attendees_num].to_i)
+    reading.update(interpretation: params[:interpretation])
+    redirect_to "/readings/#{reading.id}"
+  end
+
+  def destroy
+    reading = Reading.find(params[:id])
+    reading.destroy
+    redirect_to '/readings'
   end
 end

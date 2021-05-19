@@ -11,9 +11,9 @@ RSpec.describe 'Reading creation' do
 
     visit "/tarot_decks/#{deck.id}/readings"
 
-    page.should have_selector("[value='Add New Reading']")
+    expect(page).to have_selector("[value='Add New Reading']")
 
-    click_button('Add New Reading')
+    click_button(value: 'Add New Reading')
 
     expect(current_path).to eq("/tarot_decks/#{deck.id}/readings/new")
   end
@@ -27,16 +27,16 @@ RSpec.describe 'Reading creation' do
 
     visit "/tarot_decks/#{deck.id}/readings"
 
-    click_button('Add New Reading')
+    click_button(value: 'Add New Reading')
 
     fill_in('Cards Drawn (sepereated by commas):', with: 'Maji')
     fill_in('People in attendance:', with: 2)
     check('Was this a major reading?')
     fill_in('Interpretation:', with: 'We will survive')
-    click_button('Add New Reading')
+    click_button(value: 'Add Reading')
 
 
-    expect(current_path).to eq("/readings/#{deck.id}/readings")
+    expect(current_path).to eq("/tarot_decks/#{deck.id}/readings")
     expect(page).to have_content("Maji")
   end
 end
