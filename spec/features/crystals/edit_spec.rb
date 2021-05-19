@@ -8,14 +8,6 @@ RSpec.describe 'Crystals edit' do
     @emerald = @set.crystals.create!(name: "Emerald", price: 100.99, charged: true, description: "Love/Compassion/Abundance")
   end
 
-  it 'links to the edit page' do
-    visit "/crystals/#{@larimar.id}"
-
-    click_button "Edit #{@larimar.name}"
-
-    expect(current_path).to eq("/crystals/#{@larimar.id}/edit")
-  end
-
   it 'can edit the crystal' do
     visit "/crystals/#{@emerald.id}"
    
