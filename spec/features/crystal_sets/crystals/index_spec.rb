@@ -68,8 +68,8 @@ RSpec.describe 'crystal set crystals index' do
 
     fill_in :crystals_by_price, with: 100.00  
     click_button "Show Me The Crystals!"
-    
-    expect(page).to_not have_content(@emerald.name)
+
+    expect(page).to_not have_content(@larimar.name)
     expect(page).to_not have_content(@amethyst.name)
     expect(page).to have_content(@emerald.name)
   end
