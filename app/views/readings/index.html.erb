@@ -2,7 +2,7 @@
 
 <div class="right">
   <% @readings.each do |reading| %>
-  <h2><%= "#{TarotDeck.find(reading.tarot_deck_id).name} reading: #{reading.spread}" %></h2>
+  <h2><%= "#{TarotDeck.find(reading.tarot_deck_id).name} reading:"%> <a href="/readings/<%="#{reading.id}"%>"> "<%="#{reading.spread}"%>"</a></h2>
   <ul>
     <li><%= "Cards drawn: #{reading.cards_drawn}" %></li>
     <li><%= "Interpretation: #{reading.interpretation}" %></li>
