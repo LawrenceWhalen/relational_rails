@@ -7,7 +7,7 @@
     <%= form.label :charged, "Charged?" %>
     <%= form.check_box :charged, {}, checked_value = true, unchecked_value = false %>
     <%= form.label :description %>
-    <%= form.text_area :description, value: "#{@crystal.description}"%>
+    <%= form.text_area :description, value: "#{@crystal.description}" %>
     <%= form.submit "Update Crystal" %>
   <% end %>
 </div>
