@@ -64,7 +64,8 @@
    font-family: 'Inter', sans-serif;
    font-size: 0.9em;
    min-width: 400px;
-   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
  }
 
  .table th,
@@ -78,4 +79,16 @@
    font-weight: bold;
  }
 
- 
+ .form {
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  margin-left: 15px;
+ }
+
+ .single_set {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  width: 100%;
+  margin-left: 15px;
+ }
+
