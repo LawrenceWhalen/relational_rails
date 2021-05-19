@@ -17,8 +17,8 @@ In this pair project, we building a basic web app and exploring `one to many rel
 - must use PostgreSQL
 
 # Additional Gems
-- capybara
-- launchy 
-- simplecov
-- orderly
-- shoulda-matchers 
+- [capybara](https://github.com/teamcapybara/capybara)
+- [launchy](https://github.com/copiousfreetime/launchy) 
+- [simplecov](https://github.com/simplecov-ruby/simplecov)
+- [orderly](https://github.com/jmondo/orderly)
+- [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) 
