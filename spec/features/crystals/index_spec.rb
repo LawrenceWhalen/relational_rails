@@ -34,4 +34,27 @@ RSpec.describe 'crystals index' do
 
     expect(current_path).to eq("/crystals/#{@larimar.id}")
   end
+
+  it 'links to the edit page' do
+    visit "/crystals"
+
+    click_button "Edit #{@larimar.name}"
+
+    expect(current_path).to eq("/crystals/#{@larimar.id}/edit")
+  end
+
+  it 'can delete crystal from index page' do
+    visit '/crystals'
+
+    expect(page).to have_content("Larimar")
+    expect(page).to have_content("Emerald")
+
+    within first(".crystal") do
+      click_button 'Delete'
+    end
+
+    expect(page).to_not have_content("Larimar")
+    expect(page).to have_content("Emerald")
+    expect(current_path).to eq('/crystals')
+  end
 end
