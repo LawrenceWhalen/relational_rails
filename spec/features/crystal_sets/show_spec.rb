@@ -33,4 +33,15 @@ RSpec.describe 'the crystal set show page' do
     
     expect(page).to have_link("#{@set_1.crystal_count}", href: "/crystal_sets/#{@set_1.id}/crystals")
   end
+
+  it 'can delete crystal sets from show page' do
+    visit "/crystal_sets/#{@set_1.id}"
+
+    expect(page).to have_content("Raw Crystal Chunks - 28pc")
+
+    click_button 'Delete'
+
+    expect(page).to_not have_content("Raw Crystal Chunks - 28pc")
+    expect(current_path).to eq("/crystal_sets")
+  end
 end
