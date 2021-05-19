@@ -10,4 +10,11 @@ class CrystalSet < ApplicationRecord
   def crystal_count
     crystals.count
   end
+
+  def shows_crystals_pricier_than(price)
+    if price.nil?
+      
+    end
+    self.crystals.where("price > #{price}")
+  end
 end

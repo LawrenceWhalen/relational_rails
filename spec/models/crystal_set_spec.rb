@@ -20,5 +20,10 @@ RSpec.describe CrystalSet do
 
       expect(@set_1.crystal_count).to eq(2)
     end
+
+    it '#shows_crystals_pricier_than' do
+      
+      expect(@set_1.shows_crystals_pricier_than(10.99)).to eq(@emerald)
+    end
   end
 end

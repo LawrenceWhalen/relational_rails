@@ -6,6 +6,8 @@ class SetCrystalsController < ApplicationController
 
     if params[:alphabetical] == "true"
       @crystals = @crystal_set.crystals.order_alphabetically
+    elsif params[:crystals_by_price] != ""
+      @crystals = @crystal_set.shows_crystals_pricier_than(params[:crystals_by_price]) 
     else
       @crystals = @crystal_set.crystals
     end
