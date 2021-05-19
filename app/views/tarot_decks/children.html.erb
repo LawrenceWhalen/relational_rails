@@ -1,4 +1,9 @@
-<h1><%= "Readings using the #{@deck.name} deck:"%><%= button_to "Add New Reading", "/tarot_decks/#{@deck.id}/readings/new", :method => "get" %></h1><br><br>
+<h1 class="relative"><%= "Readings using the #{@deck.name} deck:"%><div class="navitem"><%= button_to "Add New Reading", "/tarot_decks/#{@deck.id}/readings/new", :method => "get" %></div
+  ><div class="navitem">
+    <%= form_with url: "/tarot_decks/#{@deck.id}/readings", :method => "get", local: true do |form| %>
+    <% form.hidden_field :alpha, :value => true %>
+    <%= form.submit 'Alphabatize' %>
+  <% end %></div></h1><br><br>
 
 <div class="right top">
   <% @readings.each do |reading| %>

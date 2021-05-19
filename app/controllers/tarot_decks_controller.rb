@@ -1,7 +1,7 @@
 class TarotDecksController < ApplicationController
 
   def index
-  @tarot_decks = TarotDeck.order(created_at: :desc)
+    @tarot_decks = TarotDeck.all.order_created
   end
 
   def new
@@ -24,7 +24,11 @@ class TarotDecksController < ApplicationController
 
   def children
     @deck = TarotDeck.find(params[:id])
-    @readings = Reading.where(tarot_deck_id: params[:id])
+    if params[:commit] != 'Alphabatize'
+      @readings = @deck.readings
+    else
+      @readings = @deck.readings.alphabatize
+    end
   end
 
   def edit
