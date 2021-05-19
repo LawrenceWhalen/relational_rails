@@ -44,10 +44,14 @@ RSpec.describe 'crystal set crystals index' do
 
   it 'links to alphabetically ordered index' do
     visit "/crystal_sets/#{@set.id}/crystals"
-    click_link "Sort Alphabetically"
     expect(@larimar.name).to appear_before(@emerald.name, only_text: true)
-    save_and_open_page  
+    click_link "Sort Alphabetically"
+  
     expect(@emerald.name).to appear_before(@larimar.name, only_text: true)
-    expect(current_path).to eq("/crystals/#{@set.id}/crystals")
+    expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/")
+  end
+
+  it 'filters by ' do
+    
   end
 end

@@ -5,4 +5,5 @@
   <p><%= @crystal.price %></p>
   <p><%= @crystal.charged %></p>
   <p><%= @crystal.description %></p>
+  <%= button_to "Delete", "/crystals/#{@crystal.id}", method: :delete %>
 </div>

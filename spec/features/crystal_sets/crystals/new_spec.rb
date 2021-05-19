@@ -9,7 +9,7 @@ RSpec.describe 'Crystal Set Crystal creation' do
   it 'links to the new page from set crystal index' do
     visit "/crystal_sets/#{@set.id}/crystals"
 
-    click_link "Add Crystal"
+    click_button "Add Crystal"
  
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/new")
   end
@@ -20,10 +20,10 @@ RSpec.describe 'Crystal Set Crystal creation' do
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/new")
 
     fill_in "Name", with: "Amethyst"
-    fill_in "Price", with:  12.99
+    fill_in "Price", with: 12.99
     uncheck "Charged?"
     fill_in "Description", with: "Stress Relief/Protection"
-    click_button("Create Crystal")
+    click_button "Create Crystal"
 
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals")
   end

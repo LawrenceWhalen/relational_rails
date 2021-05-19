@@ -1,12 +1,11 @@
 <div class="main">
-<h1>Crystals</h1>
-
-<% @crystals.each do |crystal| %>
-  <h2><%= link_to crystal.name, "/crystals/#{crystal.id}" %></h2>
-  <%= button_to "Edit #{crystal.name}", "/crystals/#{crystal.id}/edit", method: :get %> 
-  <p>Price: $<%= crystal.price %></p>
-  <p>Charged:<%= crystal.charged %></p>
-  <p>Meaning:<%= crystal.description %></p>
-<% end %>
+  <h1>Crystals</h1>
+  <% @crystals.each do |crystal| %>
+    <h2><%= link_to crystal.name, "/crystals/#{crystal.id}" %></h2>
+    <%= button_to "Edit #{crystal.name}", "/crystals/#{crystal.id}/edit", method: :get %>
+    <p>Price: $<%= crystal.price %></p>
+    <p>Charged:<%= crystal.charged %></p>
+    <p>Meaning:<%= crystal.description %></p>
+    <%= button_to "Delete", "/crystals/#{crystal.id}", method: :delete %>
+  <% end %>
 </div>
-

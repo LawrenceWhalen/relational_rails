@@ -22,6 +22,13 @@ class SetCrystalsController < ApplicationController
     redirect_to "/crystal_sets/#{@crystal_set.id}/crystals"
   end
 
+  def destroy 
+    @crystal_set = CrystalSet.find(params[:id])
+    @crystal_set.crystals.destroy 
+
+    redirect_to "/crystal_sets/#{@crystal_set.id}/crystals"
+  end
+
   private
     def crystal_params
       params.permit(:name, :price, :charged, :description)
