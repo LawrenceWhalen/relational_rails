@@ -6,14 +6,6 @@ RSpec.describe 'Crystal sets edit' do
     @set = CrystalSet.create!(collection_name: "5 Different Rough Stones", limited_edition: false , inventory: 40)
   end
 
-  it 'links to the edit page' do
-    visit "/crystal_sets/#{@set.id}"
-
-    click_button "Edit #{@set.collection_name}"
-
-    expect(current_path).to eq("/crystal_sets/#{@set.id}/edit")
-  end
-
   it 'can edit the crystal set' do
     visit "/crystal_sets/#{@set.id}"
 

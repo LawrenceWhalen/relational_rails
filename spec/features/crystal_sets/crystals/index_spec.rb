@@ -25,7 +25,7 @@ RSpec.describe 'crystal set crystals index' do
   it 'links to each crystal show page' do
     visit "/crystal_sets/#{@set.id}/crystals"
     click_on @larimar.name
-    
+
     expect(current_path).to eq("/crystals/#{@larimar.id}")
   end
 
@@ -43,13 +43,33 @@ RSpec.describe 'crystal set crystals index' do
     expect(current_path).to eq("/crystals")
   end
 
+  it 'links to the edit page' do
+    visit "/crystal_sets/#{@set.id}/crystals"
+    click_button "Edit #{@larimar.name}"
+
+    expect(current_path).to eq("/crystals/#{@larimar.id}/edit")
+  end
+
+  it 'can delete crystal from index page' do
+    visit "/crystal_sets/#{@set.id}/crystals"
+
+    expect(page).to have_content("Larimar")
+
+    within first(".set_crystal") do
+      click_button 'Delete'
+    end
+
+    expect(page).to_not have_content("Larimar")
+    expect(current_path).to eq('/crystals')
+  end
+
   it 'links to alphabetically ordered index' do
     visit "/crystal_sets/#{@set.id}/crystals"
 
     expect(@larimar.name).to appear_before(@emerald.name, only_text: true)
 
     click_link "Sort Alphabetically"
-  
+
     expect(@emerald.name).to appear_before(@larimar.name, only_text: true)
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/")
   end
@@ -58,7 +78,7 @@ RSpec.describe 'crystal set crystals index' do
     visit "/crystal_sets/#{@set.id}/crystals"
 
     expect(page).to have_content("Show Crystals That Cost >")
-    
+
     fill_in :crystals_by_price, with: 10.00  
     click_button "Show Me The Crystals!"
 
@@ -72,5 +92,12 @@ RSpec.describe 'crystal set crystals index' do
     expect(page).to_not have_content(@larimar.name)
     expect(page).to_not have_content(@amethyst.name)
     expect(page).to have_content(@emerald.name)
+  end
+
+  it 'links to the new page from set crystal index' do
+    visit "/crystal_sets/#{@set.id}/crystals"
+    click_button "Add Crystal"
+
+    expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/new")
   end
 end

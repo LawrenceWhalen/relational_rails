@@ -1,11 +1,13 @@
 <div class="main">
   <h1> Crystal Sets </h1>
-  <% @crystal_sets.each do |set| %>
-      <h2><%= link_to set.collection_name, "/crystal_sets/#{set.id}" %> Collection created at: <%= set.created_at.strftime('%m/%d/%y') %></h2>
-      <%= button_to "Edit #{set.collection_name}", "/crystal_sets/#{set.id}/edit", method: :get %>
-      <p>Limited Edition: <%= set.limited_edition %></p>
-      <p>Inventory: <%= set.inventory %></p>
-      <%= button_to "Delete", "/crystal_sets/#{set.id}", method: :delete %>
-  <% end %>
+    <% @crystal_sets.each do |set| %>
+      <div class="set">
+        <h2><%= link_to set.collection_name, "/crystal_sets/#{set.id}" %> Collection created at: <%= set.created_at.strftime('%m/%d/%y') %></h2>
+        <%= button_to "Edit #{set.collection_name}", "/crystal_sets/#{set.id}/edit", method: :get %>
+        <p>Limited Edition: <%= set.limited_edition %></p>
+        <p>Inventory: <%= set.inventory %></p>
+        <%= button_to "Delete", "/crystal_sets/#{set.id}", method: :delete %>
+      </div>
+    <% end %>
   <%= button_to "New Crystal Set", "/crystal_sets/new", method: :get %>
 </div>
