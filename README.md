@@ -17,6 +17,9 @@ In this pair project, we building a basic web app and exploring `one to many rel
 - must use PostgreSQL
 
 # Additional Gems
+- [pry](https://github.com/pry/pry)
+- [rspec](https://github.com/rspec/rspec)
+- [rspec-rails](https://github.com/rspec/rspec-rails)
 - [capybara](https://github.com/teamcapybara/capybara)
 - [launchy](https://github.com/copiousfreetime/launchy) 
 - [simplecov](https://github.com/simplecov-ruby/simplecov)
