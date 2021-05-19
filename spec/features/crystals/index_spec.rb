@@ -35,7 +35,7 @@ RSpec.describe 'crystals index' do
     expect(current_path).to eq("/crystals/#{@larimar.id}")
   end
 
-  it 'links to the edit page' do
+  it 'links to crystal edit page' do
     visit "/crystals"
 
     click_button "Edit #{@larimar.name}"
