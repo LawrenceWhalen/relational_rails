@@ -10,7 +10,7 @@
         <%= form.check_box :limited_edition, {}, checked_value = true, unchecked_value = false %>
       </p>
       <p>
-        <%= form.label :inventory %> 
+        <%= form.label :inventory %>
         <%= form.number_field :inventory, in: 0..1000, step: 1 %>
       </p>
       <p><%= form.submit "Update Crystal Set" %></p>
