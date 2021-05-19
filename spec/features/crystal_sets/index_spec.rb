@@ -38,7 +38,7 @@ RSpec.describe 'crystal set index' do
   end
 
   it 'links to the edit page' do
-    visit "/crystal_sets/#{@set_1.id}"
+    visit "/crystal_sets/"
 
     click_button "Edit #{@set_1.collection_name}"
 
@@ -58,5 +58,13 @@ RSpec.describe 'crystal set index' do
     expect(page).to_not have_content("Intuitively Chosen Raw Crystals")
     expect(page).to have_content("Raw Crystal Chunks - 28pc")
     expect(current_path).to eq('/crystal_sets')
+  end
+
+  it 'links to the new page from crystal set from crsytal set index' do
+    visit '/crystal_sets'
+
+    click_button 'New Crystal Set'
+
+    expect(current_path).to eq('/crystal_sets/new')
   end
 end
