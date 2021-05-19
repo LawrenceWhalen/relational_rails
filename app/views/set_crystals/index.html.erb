@@ -6,16 +6,33 @@
     <%= form.submit "Show Me The Crystals!" %>
   <% end %>
 
-  <h1><%= @crystal_set.collection_name %> Collection </h1>
-  <% @crystals.each do |crystal| %>
-    <div class="set_crystal">
-      <h2><%= link_to crystal.name, "/crystals/#{crystal.id}" %></h2>
-      <%= button_to "Edit #{crystal.name}", "/crystals/#{crystal.id}/edit", method: :get %>
-      <p>Price: $<%= crystal.price %></p>
-      <p>Charged:<%= crystal.charged %></p>
-      <p>Meaning:<%= crystal.description %></p>
-      <%= button_to "Delete", "/crystals/#{crystal.id}", method: :delete %>
-    </div>
-  <% end %>
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Charged?</th>
+        <th scope="col">Meaning</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% @crystals.each do |crystal| %>
+        <tr class="row">
+          <th scope="row"><%= crystal.id %></th>
+          <td><%= link_to crystal.name, "/crystals/#{crystal.id}" %></td>
+          <td><%= crystal.price %></td>
+          <td><%= crystal.charged %></td>
+          <td><%= crystal.description %></td>
+          <td>
+            <%= button_to "Edit #{crystal.name}", "/crystals/#{crystal.id}/edit", method: :get %>
+            <%= button_to "Delete", "/crystals/#{crystal.id}", method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
   <%= button_to "Add Crystal", "/crystal_sets/#{@crystal_set.id}/crystals/new", method: :get %>
 </div>

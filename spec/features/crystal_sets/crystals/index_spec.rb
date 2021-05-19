@@ -55,7 +55,7 @@ RSpec.describe 'crystal set crystals index' do
 
     expect(page).to have_content("Larimar")
 
-    within first(".set_crystal") do
+    within first(".row") do
       click_button 'Delete'
     end
 
