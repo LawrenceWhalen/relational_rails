@@ -3,15 +3,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/tarot_decks', to: 'tarot_decks#index'
-  get '/readings', to: 'readings#index'
   get '/tarot_decks/new', to: 'tarot_decks#new'
   post '/tarot_decks', to: 'tarot_decks#create'
+  get '/tarot_decks/:id/edit', to: 'tarot_decks#edit'
   get '/tarot_decks/:id/readings', to: 'tarot_decks#children'
   get '/tarot_decks/:id', to: 'tarot_decks#deck'
   patch '/tarot_decks/:id', to: 'tarot_decks#update'
-  get '/tarot_decks/:id/edit', to: 'tarot_decks#edit'
+  delete '/tarot_decks/:id', to: 'tarot_decks#destroy'
 
   get '/readings/new', to: 'readings#new'
+  get '/readings', to: 'readings#index'
   get '/readings/:id', to: 'readings#reading'
   post '/readings', to: 'readings#create'
   get '/tarot_decks/:id/readings/new', to: 'readings#new'

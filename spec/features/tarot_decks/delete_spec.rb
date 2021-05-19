@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'the Tarot Deck creation' do
-  it 'links to the new page from the tarot deck index' do
+RSpec.describe 'the Tarot Deck deletion process' do
+  it 'links to delete from the view page' do
     deck_1 = TarotDeck.create!(
       name: 'Programs',
       number_made: 15,
@@ -15,6 +15,8 @@ RSpec.describe 'the Tarot Deck creation' do
     click_button('Delete Programs')
 
     expect(current_path).to eq('/tarot_decks')
+
+    expect(page).to_not have_content("Programs")
   end
   it 'can delete a tarot deck' do
     deck_1 = TarotDeck.create!(

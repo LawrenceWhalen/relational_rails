@@ -42,4 +42,10 @@ class TarotDecksController < ApplicationController
     deck.update(pre_owned: params[:pre_owned])
     redirect_to "/tarot_decks"
   end
+
+  def destroy
+    tarot_deck = TarotDeck.find(params[:id])
+    tarot_deck.destroy
+    redirect_to '/tarot_decks'
+  end
 end

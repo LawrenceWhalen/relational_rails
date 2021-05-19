@@ -95,12 +95,12 @@ RSpec.describe 'the Reading index' do
 
     visit("/readings")
 
-    expect(page).to have_selector("[value='Update Reading ##{reading_2.id}']")
+    expect(page).to have_selector("[value='Update Reading ##{reading_1.id}']")
 
-    within("li#1") do
+    within("li#0") do
       click_button('Update Reading')
     end
 
-    expect(current_path).to eq("/readings/#{reading_2.id}/edit")
+    expect(current_path).to eq("/readings/#{reading_1.id}/edit")
   end
 end
