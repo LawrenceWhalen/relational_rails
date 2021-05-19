@@ -12,9 +12,11 @@ RSpec.describe 'Crystals edit' do
     visit "/crystals/#{@emerald.id}"
    
     expect(page).to have_content("Emerald")
+
     click_button "Edit #{@emerald.name}"
-   
     fill_in 'Name', with: "Green Emerald"
     click_button 'Update Crystal'
+
+    expect(current_path).to eq("/crystals/#{@emerald.id}")
   end
 end
