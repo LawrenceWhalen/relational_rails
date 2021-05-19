@@ -41,7 +41,25 @@ RSpec.describe 'the crystal show page' do
   it 'links to crystal set show page' do
     visit "/crystals/#{@larimar.id}"
     click_on @larimar.crystal_set.collection_name
-    
+
     expect(current_path).to eq("/crystal_sets/#{@set.id}")
+  end
+
+  it 'links to the edit page' do
+    visit "/crystals/#{@larimar.id}"
+    click_button "Edit #{@larimar.name}"
+
+    expect(current_path).to eq("/crystals/#{@larimar.id}/edit")
+  end
+
+  it 'can delete crystal from index page' do
+    visit "/crystals/#{@larimar.id}"
+
+    expect(page).to have_content("Larimar")
+
+    click_button "Delete"
+
+    expect(page).to_not have_content("Larimar")
+    expect(current_path).to eq('/crystals')
   end
 end
