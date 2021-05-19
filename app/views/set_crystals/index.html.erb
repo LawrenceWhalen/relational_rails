@@ -9,5 +9,5 @@
     <p>Meaning:<%= crystal.description %></p>
     <%= button_to "Delete", "/crystals/#{crystal.id}", method: :delete %>
   <% end %>
-  <%= button_to "Add Crystal", "/crystal_sets/#{@crystal_set.id}/crystals/new" %>
+  <%= button_to "Add Crystal", "/crystal_sets/#{@crystal_set.id}/crystals/new", method: :get %>
 </div>

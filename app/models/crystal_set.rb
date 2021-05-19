@@ -8,6 +8,6 @@ class CrystalSet < ApplicationRecord
   end
 
   def crystal_count
-    self.crystals.count
+    crystals.count
   end
 end

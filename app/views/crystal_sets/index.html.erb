@@ -7,5 +7,5 @@
       <p>Inventory: <%= set.inventory %></p>
       <%= button_to "Delete", "/crystal_sets/#{set.id}", method: :delete %>
   <% end %>
-  <%= button_to "New Crystal Set", "/crystal_sets/new" %>
+  <%= button_to "New Crystal Set", "/crystal_sets/new", method: :get %>
 </div>

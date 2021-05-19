@@ -50,4 +50,8 @@ RSpec.describe 'crystal set crystals index' do
     expect(@emerald.name).to appear_before(@larimar.name, only_text: true)
     expect(current_path).to eq("/crystal_sets/#{@set.id}/crystals/")
   end
+
+  it 'filters by ' do
+    
+  end
 end
