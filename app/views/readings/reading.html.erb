@@ -5,6 +5,10 @@
   <li><%= "Interpretation: #{@reading.interpretation}" %></li>
   <li><%= "People in attendance: #{@reading.attendees_num}" %></li>
   <li><%= "Major reading: #{@reading.major_reading}" %></li>
+  <ul class="relative">
+    <li><div class="navitem"><%= button_to "Update Reading", "/readings/#{@reading.id}/edit", :method => "get" %></div>
+    <div class="navitem"><%= button_to "Delete Reading", "/readings/#{@reading.id}", :method => "delete" %></div></li>
+  </ul>
 </ul>
-<%= button_to "Update Reading", "/readings/#{@reading.id}/edit", :method => "get" %><br>
-<%= button_to "Delete Reading", "/readings/#{@reading.id}", :method => "delete" %>
+<div class="relative">
+  <div class="navitem">

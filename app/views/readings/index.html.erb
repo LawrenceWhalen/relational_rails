@@ -8,7 +8,9 @@
     <li><%= "Interpretation: #{reading.interpretation}" %></li>
     <li><%= "People in attendance: #{reading.attendees_num}" %></li>
     <li><%= "Major reading: #{reading.major_reading}" %></li>
-    <li id="<%= index %>"><%= button_to "Update Reading ##{reading.id}", "/readings/#{reading.id}/edit", :method => "get" %></li>
+    <ul>
+      <li id="<%= index %>"><%= button_to "Update Reading ##{reading.id}", "/readings/#{reading.id}/edit", :method => "get" %></li>
+    </ul>
   </ul>
   <% end %>
 </div>
