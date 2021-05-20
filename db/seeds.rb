@@ -21,7 +21,7 @@ Crystal.destroy_all
 @larimar = @set_1.crystals.create!(name: "Larimar", price: 4.55, charged: true, description: "Peace/Relaxation/Communication")
 @emerald = @set_1.crystals.create!(name: "Emerald", price: 100.99, charged: true, description: "Love/Compassion/Abundance")
 @obsidian = @set_1.crystals.create!(name: "Obsidian", price: 4.75, charged: true, description: "Protection/Purification/Grounding")
-@amethyst = @set_2.crytals.create!(name: "Amethyst", price: 12.99, charged: false, description: "Peace of mind/Protection")
+@amethyst = @set_2.crystals.create!(name: "Amethyst", price: 12.99, charged: false, description: "Peace of mind/Protection")
 @howlite = @set_2.crystals.create!(name: "Howlite", price: 50.99, charged: true, description: "Surrender/Letting Go of Attachments")
 @rose_quartz = @set_2.crystals.create!(name: "Rose Quartz", price: 4.00, charged: false, description: "Love/Trust/Emotional Healing")
-@chrysocolla = @set_2.crystals.create!(name: "Chrysocolla", price: 15.00, charged: true, description: "Wisdom/Communication/Gentle Power"
+@chrysocolla = @set_2.crystals.create!(name: "Chrysocolla", price: 15.00, charged: true, description: "Wisdom/Communication/Gentle Power")

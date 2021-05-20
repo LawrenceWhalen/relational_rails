@@ -54,6 +54,6 @@ ActiveRecord::Schema.define(version: 2021_05_14_004940) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "crystals", "crystal_sets", on_delete :cascade
+  add_foreign_key "crystals", "crystal_sets"
   add_foreign_key "readings", "tarot_decks"
 end
