@@ -8,7 +8,7 @@
       </p>
       <p>
         <%= form.label :price %>
-        <%= form.number_field :price, in: 1.0..1000.00, step: :any %>
+        <%= form.number_field :price, in: 1.0..1000.00, step: :any, value: "#{@crystal.price}" %>
       </p>
       <p>
         <%= form.label :charged, "Charged?" %>

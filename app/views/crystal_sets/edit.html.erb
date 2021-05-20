@@ -12,7 +12,7 @@
       </p>
       <p>
         <%= form.label :inventory %>
-        <%= form.number_field :inventory, in: 0..1000, step: 1 %>
+        <%= form.number_field :inventory, in: 0..1000, step: 1, value: "#{@crystal_set.inventory}" %>
       </p>
       <p><%= form.submit "Update Crystal Set" %></p>
     <% end %>
