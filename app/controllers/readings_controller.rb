@@ -12,9 +12,14 @@ class ReadingsController < ApplicationController
   end
 
   def create
+    if params[:major_reading] != nil
+      boolean = true
+    else
+      boolean = false
+    end
     reading = Reading.new({
       spread: params[:spread],
-      major_reading: params[:major_reading],
+      major_reading: boolean,
       cards_drawn: params[:cards_drawn].split(',').to_s,
       attendees_num: params[:attendees_num].to_i,
       interpretation: params[:interpretation],
@@ -30,10 +35,15 @@ class ReadingsController < ApplicationController
   end
 
   def update
+    if params[:major_reading] != nil
+      boolean = true
+    else
+      boolean = false
+    end
     reading = Reading.find(params[:id])
     reading.update(spread: params[:spread])
     reading.update(cards_drawn: params[:cards_drawn].split(',').to_s)
-    reading.update(major_reading: params[:major_reading])
+    reading.update(major_reading: boolean)
     reading.update(attendees_num: params[:attendees_num].to_i)
     reading.update(interpretation: params[:interpretation])
     redirect_to "/readings/#{reading.id}"

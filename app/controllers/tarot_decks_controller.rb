@@ -1,7 +1,14 @@
 class TarotDecksController < ApplicationController
 
   def index
-    @tarot_decks = TarotDeck.all.order_created
+
+    if params[:children] == true
+      @children = true
+      @tarot_decks = TarotDeck.order
+    else
+      @children = false
+      @tarot_decks = TarotDeck.all.order_created
+    end
   end
 
   def new
@@ -13,10 +20,15 @@ class TarotDecksController < ApplicationController
   end
 
   def create
+    if params[:pre_owned] != nil
+      boolean = true
+    else
+      boolean = false
+    end
     TarotDeck.create!({
     name: params[:name],
     number_made: params[:number_made].to_i,
-    pre_owned: params[:pre_owned]
+    pre_owned: boolean
     })
 
     redirect_to "/tarot_decks"
@@ -24,8 +36,8 @@ class TarotDecksController < ApplicationController
 
   def children
     @deck = TarotDeck.find(params[:id])
-    if params[:commit] == 'Alphabatize'
-      @readings = @deck.readings.alphabatize
+    if params[:commit] == 'Alphabetize'
+      @readings = @deck.readings.Alphabetize
     elsif params[:attendees] != nil
       @readings = @deck.readings.attend(params[:attendees])
     else
@@ -38,10 +50,15 @@ class TarotDecksController < ApplicationController
   end
 
   def update
+    if params[:pre_owned] != nil
+      boolean = true
+    else
+      boolean = false
+    end
     deck = TarotDeck.find(params[:id])
     deck.update(name: params[:name])
     deck.update(number_made: params[:number_made].to_i)
-    deck.update(pre_owned: params[:pre_owned])
+    deck.update(pre_owned: boolean)
     redirect_to "/tarot_decks"
   end
 

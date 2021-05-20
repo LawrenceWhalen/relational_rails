@@ -2,7 +2,7 @@
   <div class="navitem">
   <%= form_with url: "/tarot_decks/#{@deck.id}/readings", :method => "get", local: true do |form| %>
     <% form.hidden_field :alpha, :value => true %>
-    <%= form.submit 'Alphabatize' %>
+    <%= form.submit 'Alphabetize' %>
   <% end %></div></h1><br>
   <%= form_with url: "/tarot_decks/#{@deck.id}/readings", :method => "get", local: true do |form| %>
   <%= form.label :attendees, 'Only show readings with at least' %>
